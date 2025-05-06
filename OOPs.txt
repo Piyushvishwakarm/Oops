@@ -1,0 +1,5376 @@
+1. What is the fundamental difference between procedural and object-oriented programming paradigms?
+Answer:
+Procedural programming is based on functions and a top-down approach where code is organized into procedures or routines. Object-oriented programming (OOP) organizes code around objects and data, using a bottom-up approach.
+
+Example:
+
+// Procedural
+int add(int a, int b) {
+    return a + b;
+}
+
+// Object-Oriented
+class Calculator {
+public:
+    int add(int a, int b) {
+        return a + b;
+    }
+};
+
+
+---
+
+2. Define Object-Oriented Programming (OOP). What are its core characteristics?
+Answer:
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data and methods. Core characteristics include:
+
+1. Encapsulation
+2. Abstraction
+3. Inheritance
+4. Polymorphism
+
+
+---
+
+3. Explain the concept of "abstraction" within the context of OOP. Why is it important?
+Answer:
+Abstraction is the concept of hiding internal implementation details and showing only the essential features of an object. It is important because it simplifies code complexity and improves code reusability and maintainability.
+
+
+---
+
+4. What are the benefits of using OOP over procedural programming?
+Answer:
+1. Improved code reusability through inheritance
+2. Better code organization through encapsulation
+3. Flexibility via polymorphism
+4. Easier maintenance and scalability
+
+---
+
+5. Give a real-world example of a problem that is well-suited to be solved using an OOP approach. Explain why.
+Answer:
+Example: A library management system. It involves entities like Books, Members, and Librarians. Each can be represented as classes with their own properties and methods, which makes OOP ideal due to its support for encapsulation and modularity.
+
+
+---
+
+6. Define the four key principles of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction
+// Answer:
+1. Encapsulation: Bundling data and methods that operate on that data within a single unit (class).
+2. Inheritance: Mechanism where one class acquires the properties and behaviors of another class.
+3. Polymorphism: Ability of functions or objects to behave differently in different contexts.
+4. Abstraction: Hiding the complex implementation and showing only essential features.
+
+
+---
+
+7. Explain how encapsulation helps to protect data and create modular code. Give an example using a class and its members.
+Answer:
+Encapsulation restricts direct access to some of an object's components and can prevent the accidental modification of data.
+
+class Employee {
+private:
+    int salary;
+
+public:
+    void setSalary(int s) {
+        if (s > 0)
+            salary = s;
+    }
+
+    int getSalary() {
+        return salary;
+    }
+};
+
+
+---
+
+8. What is inheritance? How does it promote code reuse and maintainability? Provide a simple example using classes.
+Answer:
+Inheritance allows a class (child) to acquire properties and methods of another class (parent), promoting code reuse.
+
+class Animal {
+public:
+    void eat() {
+        cout << "Eating..." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Barking..." << endl;
+    }
+};
+
+
+---
+
+9. Describe polymorphism. How does it contribute to flexibility and extensibility in software design? Give examples of function/operator overloading and function overriding.
+Answer:
+Polymorphism allows methods to do different things based on the object or data passed. It enables flexibility and extensibility.
+
+Function Overloading:
+int add(int a, int b) { return a + b; }
+float add(float a, float b) { return a + b; }
+
+Function Overriding:
+class Base {
+public:
+    virtual void show() { cout << "Base class"; }
+};
+
+class Derived : public Base {
+public:
+    void show() override { cout << "Derived class"; }
+};
+
+
+---
+
+10. Explain the difference between "overloading" and "overriding".
+Answer:
+Overloading: Same function name with different parameters in the same class (compile-time).
+Overriding: Redefining a base class method in a derived class using the same signature (runtime).
+
+
+---
+
+11. List at least three advantages of using OOP in software development.
+Answer:
+1. Modular structure
+2. Code reusability
+3. Easier troubleshooting and maintenance
+
+
+---
+
+12. Give examples of application domains where OOP is commonly used (e.g., GUI development, game programming, etc.).
+Answer:
+1. GUI applications (e.g., Qt framework)
+2. Game development (e.g., Unity, Unreal Engine)
+3. Web applications (e.g., Django, Laravel)
+4. Real-time systems
+
+
+---
+
+13. Discuss the impact of OOP on code maintainability and reusability.
+// Answer:
+OOP enhances maintainability by organizing code into logical units (classes). It allows for reuse of code through inheritance and polymorphism, reducing redundancy and simplifying updates.
+
+
+---
+
+14. How does OOP contribute to the development of large and complex software systems?
+Answer:
+OOP breaks down complex systems into smaller, manageable objects. Encapsulation and modularity allow teams to work independently on components, improving collaboration and scalability.
+
+
+---
+
+15. Explain the benefits of using OOP in software development.
+Answer:
+- Modularity
+- Code reusability
+- Scalability
+- Easier maintenance and debugging
+- Real-world modeling
+
+
+---
+
+16. Describe the basic structure of a C++ program. What are the essential components?
+A basic C++ program has the following essential components:
+1. Preprocessor Directives (e.g., #include <iostream>)
+2. Namespace Declaration (e.g., using namespace std;)
+3. Main Function (int main())
+4. Variable Declarations and Statements
+5. Return Statement
+Example:
+#include <iostream>
+using namespace std;
+int main() {
+ cout << "Hello, World!" << endl;
+ return 0;
+}
+
+17. Explain the purpose of namespaces in C++. How do they help to avoid naming conflicts?
+Namespaces are used to organize code into logical groups and prevent name collisions.
+They help avoid conflicts when different libraries have functions or variables with the same name.
+Example:
+namespace A { int value = 5; }
+namespace B { int value = 10; }
+cout << A::value; // Accesses value from namespace A
+
+18. What are identifiers in C++? What rules must be followed when creating them?
+Identifiers are the names used for variables, functions, arrays, etc.
+Rules:
+1. Can use letters, digits, and underscores.
+2. Must begin with a letter or underscore.
+3. Cannot be a keyword.
+4. Are case-sensitive.
+Example: int age; float _height;
+
+19. What are the differences between variables and constants in C++? How are they declared?
+Variables can change their value; constants cannot after declaration.
+Variables: int x = 5;
+Constants: const int y = 10;
+
+20. Explain how to use control structures (e.g., if-else, for, while) to control the flow of execution in a
+C++ program. Provide a simple code example
+Control structures determine the flow of execution.
+Example:
+for (int i = 1; i <= 5; i++) {
+ if (i % 2 == 0)
+ cout << i << " is even\n";
+ else
+ cout << i << " is odd\n";
+}
+
+21. Write a C++ program to demonstrate the use of static_cast by converting an int to a double and
+vice versa.
+#include <iostream>
+using namespace std;
+int main() {
+ int a = 10;
+ double b = static_cast<double>(a);
+
+ int c = static_cast<int>(b);
+ cout << "Double: " << b << ", Int: " << c << endl;
+ return 0;
+}
+
+22. Write a C++ program to demonstrate the use of dynamic_cast for safe downcasting in a
+polymorphic class hierarchy.
+#include <iostream>
+using namespace std;
+class Base { public: virtual void show() {} };
+class Derived : public Base { public: void display() { cout << "Derived class"; } };
+int main() {
+ Base *b = new Derived;
+ Derived *d = dynamic_cast<Derived*>(b);
+ if (d) d->display();
+ return 0;
+}
+
+23. Write a C++ program to demonstrate the use of const_cast by modifying a constant variable.
+#include <iostream>
+using namespace std;
+void modify(const int* ptr) {
+ int* mod = const_cast<int*>(ptr);
+ *mod = 20;
+}
+int main() {
+ const int x = 10;
+ modify(&x)
+cout << "Modified value: " << x << endl;
+ return 0;
+}
+
+24. Write a C++ program to demonstrate the use of reinterpret_cast to convert an int to a char.
+#include <iostream>
+using namespace std;
+int main() {
+ int a = 65;
+ char* ch = reinterpret_cast<char*>(&a);
+ cout << "Character: " << *ch << endl;
+ return 0;
+}
+
+25. Write a C++ program to demonstrate the use of C-style casting by converting an int to a double.
+#include <iostream>
+using namespace std;
+int main() {
+ int a = 5;
+ double b = (double)a;
+ cout << "Converted: " << b << endl;
+ return 0;
+}
+
+26. Write a C++ program to print the numbers from 1 to 10 using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ for (int i = 1; i <= 10; i++) {
+cout << i << " ";
+ }
+ return 0;
+}
+
+27. Write a C++ program to calculate the sum of the first 50 natural numbers using a while loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int i = 1, sum = 0;
+ while (i <= 50) {
+ sum += i;
+ i++;
+ }
+ cout << "Sum = " << sum << endl;
+ return 0
+}
+
+28. Write a C++ program to find the factorial of a given number using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n, fact = 1;
+ cout << "Enter a number: "; cin >> n;
+ for (int i = 1; i <= n; i++) fact *= i;
+ cout << "Factorial = " << fact;
+ return 0;
+}
+
+
+29. Write a C++ program to reverse a given number using a while loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n, rev = 0;
+ cout << "Enter a number: "; cin >> n;
+ while (n != 0) {
+ rev = rev * 10 + n % 10;
+ n /= 10;
+ }
+ cout << "Reversed = " << rev;
+ return 0;
+}
+
+
+30. Write a C++ program to check if a given number is a prime number using a for loop.
+#include <iostream>
+using namespace std;
+[4:06 pm, 06/05/2025] Ojasw Lowanshi: int main() {
+ int n, i;
+ bool isPrime = true;
+ cout << "Enter a number: "; cin >> n;
+ if (n <= 1) isPrime = false;
+ for (i = 2; i <= n / 2; i++) {
+ if (n % i == 0) { isPrime = false; break; }
+ }
+ cout << (isPrime ? "Prime" : "Not Prime");
+ return 0;
+}
+
+
+31. Write a C++ program to print the Fibonacci series up to a given number of terms using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n, t1 = 0, t2 = 1, next;
+ cout << "Enter terms: "; cin >> n;
+ for (int i = 1; i <= n; i++) {
+ cout << t1 << " ";
+ next = t1 + t2;
+ t1 = t2;
+ t2 = next;
+ }
+ return 0;
+}
+
+32. Write a C++ program to count the number of digits in a given number using a while loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n, count = 0;
+ cout << "Enter a number: "; cin >> n;
+ while (n != 0) { n /= 10; count++; }
+ cout << "Digits: " << count;
+ return 0;
+}
+
+
+33. Write a C++ program to print the sum of all even numbers between 1 and 100 using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int sum = 0;
+ for (int i = 2; i <= 100; i += 2) sum += i;
+ cout << "Sum = " << sum;
+ return 0;
+}
+
+
+34. Write a C++ program to find the largest number in an array using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n, max;
+ cout << "Enter size: "; cin >> n;
+ int arr[n];
+ cout << "Enter elements: ";
+for (int i = 0; i < n; i++) cin >> arr[i];
+ max = arr[0];
+ for (int i = 1; i < n; i++) if (arr[i] > max) max = arr[i];
+ cout << "Max = " << max;
+ return 0;
+}
+
+
+35. Write a C++ program to print the elements of an array in reverse order using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n;
+ cout << "Enter size: "; cin >> n;
+ int arr[n];
+ cout << "Enter elements: ";
+ for (int i = 0; i < n; i++) cin >> arr[i];
+ cout << "Reverse order: ";
+ for (int i = n - 1; i >= 0; i--) cout << arr[i] << " ";
+ return 0;
+}
+
+
+36. Write a C++ program to calculate the average of numbers in an array using a for loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int n, sum = 0;
+ cout << "Enter size: "; cin >> n;
+ int arr[n];
+[4:06 pm, 06/05/2025] Ojasw Lowanshi: cout << "Enter elements: ";
+ for (int i = 0; i < n; i++) { cin >> arr[i]; sum += arr[i]; }
+ cout << "Average = " << (float)sum/n;
+ return 0;
+}
+
+
+38. Write a C++ program to find the GCD (Greatest Common Divisor) of two numbers using a while
+loop.
+#include <iostream>
+using namespace std;
+int main() {
+ int a, b;
+ cout << "Enter two numbers: "; cin >> a >> b;
+ while (b != 0) {
+ int temp = b;
+ b = a % b;
+ a = temp;
+ }
+ cout << "GCD = " << a;
+ return 0;
+}
+
+39. Prime Numbers from 1 to 100
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 2; i <= 100; i++) {
+        bool isPrime = true;
+        for (int j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) cout << i << " ";
+    }
+    return 0;
+}
+
+
+---
+
+40. Sum of Digits
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, sum = 0;
+    cin >> num;
+    while (num != 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    cout << "Sum: " << sum;
+    return 0;
+}
+
+
+---
+
+41. Palindrome Number
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, original, reversed = 0;
+    cin >> num;
+    original = num;
+    while (num != 0) {
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
+    }
+    if (original == reversed)
+        cout << "Palindrome";
+    else
+        cout << "Not Palindrome";
+    return 0;
+}
+
+
+---
+
+42. Smallest in Array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {10, 2, 8, 1, 5};
+    int min = arr[0];
+    for (int i = 1; i < 5; i++)
+        if (arr[i] < min) min = arr[i];
+    cout << "Smallest: " << min;
+    return 0;
+}
+
+
+---
+
+43. First N Even Numbers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    for (int i = 1; i <= N; i++)
+        cout << 2 * i << " ";
+    return 0;
+}
+
+
+---
+
+44. Pattern (Right Angle Triangle)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows = 4;
+    for (int i = 1; i <= rows; i++) {
+        for (int j = rows - i; j > 0; j--) cout << " ";
+        for (int k = 1; k <= i; k++) cout << "* ";
+        cout << endl;
+    }
+    return 0;
+}
+
+
+---
+
+45. FizzBuzz
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0)
+            cout << "FizzBuzz ";
+        else if (i % 3 == 0)
+            cout << "Fizz ";
+        else if (i % 5 == 0)
+            cout << "Buzz ";
+        else
+            cout << i << " ";
+    }
+    return 0;
+}
+
+
+---
+
+47. Reverse String
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    cin >> str;
+    for (int i = str.length() - 1; i >= 0; i--)
+        cout << str[i];
+    return 0;
+}
+
+
+---
+
+48. Armstrong Number
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int num, original, sum = 0;
+    cin >> num;
+    original = num;
+    int digits = log10(num) + 1;
+    while (num != 0) {
+        sum += pow(num % 10, digits);
+        num /= 10;
+    }
+    if (sum == original)
+        cout << "Armstrong";
+    else
+        cout << "Not Armstrong";
+    return 0;
+}
+
+
+---
+
+49. Sum of Array Elements
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5}, sum = 0;
+    for (int i = 0; i < 5; i++) sum += arr[i];
+    cout << "Sum: " << sum;
+    return 0;
+}
+
+
+---
+
+51. Sum of Even and Odd from 1 to 100
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int evenSum = 0, oddSum = 0;
+    for (int i = 1; i <= 100; i++) {
+        if (i % 2 == 0) evenSum += i;
+        else oddSum += i;
+    }
+    cout << "Even: " << evenSum << ", Odd: " << oddSum;
+    return 0;
+}
+
+
+---
+
+52. Count Vowels and Consonants
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    getline(cin, str);
+    int v = 0, c = 0;
+    for (char ch : str) {
+        ch = tolower(ch);
+        if (isalpha(ch)) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') v++;
+            else c++;
+        }
+    }
+    cout << "Vowels: " << v << ", Consonants: " << c;
+    return 0;
+}
+
+
+---
+
+53. Binary to Decimal
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int bin, dec = 0, base = 1;
+    cin >> bin;
+    while (bin > 0) {
+        int rem = bin % 10;
+        dec += rem * base;
+        base *= 2;
+        bin /= 10;
+    }
+    cout << "Decimal: " << dec;
+    return 0;
+}
+
+
+---
+
+54. Prime Numbers Between Two Numbers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int low, high;
+    cin >> low >> high;
+    for (int i = low; i <= high; i++) {
+        bool prime = true;
+        if (i < 2) continue;
+        for (int j = 2; j * j <= i; j++)
+            if (i % j == 0) {
+                prime = false;
+                break;
+            }
+        if (prime) cout << i << " ";
+    }
+    return 0;
+}
+
+
+---
+
+55. Transpose of Matrix
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int mat[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int trans[3][2];
+    for (int i = 0; i < 2; i++)
+        for (int j = 0; j < 3; j++)
+            trans[j][i] = mat[i][j];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++)
+            cout << trans[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
+}
+
+
+---
+
+56. Harmonic Series Sum
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    float sum = 0;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        sum += 1.0 / i;
+    cout << "Sum: " << sum;
+    return 0;
+}
+
+
+---
+
+57. Find Duplicate Elements in Array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[8] = {1, 3, 2, 3, 4, 1, 5, 2};
+    for (int i = 0; i < 8; i++) {
+        for (int j = i + 1; j < 8; j++) {
+            if (arr[i] == arr[j]) {
+                cout << "Duplicate: " << arr[i] << endl;
+                break;
+            }
+        }
+    }
+    return 0;
+}
+
+
+---
+
+58. Pyramid Pattern using Nested for Loops
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows = 4;
+    for (int i = 1; i <= rows; i++) {
+        for (int space = 1; space <= rows - i; space++)
+            cout << " ";
+        for (int star = 1; star <= i; star++)
+            cout << "* ";
+        cout << endl;
+    }
+    return 0;
+}
+
+
+---
+
+59. Find LCM using while Loop
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, lcm;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+    lcm = (a > b) ? a : b;
+
+    while (true) {
+        if (lcm % a == 0 && lcm % b == 0) {
+            cout << "LCM = " << lcm << endl;
+            break;
+        }
+        lcm++;
+    }
+    return 0;
+}
+
+
+---
+
+41. Fibonacci Series using for Loop
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm;
+    cout << "Enter number of terms: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; ++i) {
+        cout << t1 << " ";
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    return 0;
+}
+
+
+---
+
+42. Add Two Matrices using Nested for Loops
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[2][2], b[2][2], sum[2][2];
+
+    cout << "Enter elements of first 2x2 matrix:\n";
+    for (int i = 0; i < 2; ++i)
+        for (int j = 0; j < 2; ++j)
+            cin >> a[i][j];
+
+    cout << "Enter elements of second 2x2 matrix:\n";
+    for (int i = 0; i < 2;
+
+
+---
+
+43. Number Guessing Game (1 to 100 using while loop)
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));  // Seed for random number generation
+    int secret = rand() % 100 + 1;
+    int guess;
+
+    cout << "Guess a number between 1 and 100: ";
+    while (true) {
+        cin >> guess;
+        if (guess == secret) {
+            cout << "Correct! You guessed the number." << endl;
+            break;
+        } else if (guess < secret) {
+            cout << "Too low. Try again: ";
+        } else {
+            cout << "Too high. Try again: ";
+        }
+    }
+
+    return 0;
+}
+
+
+---
+
+63. Character Frequency in a String using for loop
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    int freq[256] = {0};
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    for (char c : str) {
+        freq[(unsigned char)c]++;
+    }
+
+    cout << "Character frequencies:\n";
+    for (int i = 0; i < 256; i++) {
+        if (freq[i] > 0) {
+            cout << (char)i << ": " << freq[i] << endl;
+        }
+    }
+
+    return 0;
+}
+
+
+---
+
+64. Decimal to Binary Conversion using while loop
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int num;
+    string binary = "";
+
+    cout << "Enter a decimal number: ";
+    cin >> num;
+
+    if (num == 0) {
+        binary = "0";
+    } else {
+        while (num > 0) {
+            binary = to_string(num % 2) + binary;
+            num /= 2;
+        }
+    }
+
+    cout << "Binary: " << binary << endl;
+
+    return 0;
+ }
+
+                                                          ASSIGNMENT N0.2
+
+1. Purpose of the main Function in C++
+
+The main function is the entry point of a C++ program. Execution starts from main().
+
+
+---
+
+2. Significance of the Return Type of main
+
+The int return type indicates the program's exit status to the operating system. Returning 0 usually means success.
+
+
+---
+
+3. Two Valid Signatures of the main Function
+
+int main()
+int main(int argc, char* argv[])
+
+
+---
+
+4. What is Function Prototyping?
+
+Function prototyping declares the function's return type, name, and parameters before its use. It helps with type checking and ensures the compiler knows about the function.
+
+
+---
+
+5. Function Prototype (int return, two int parameters)
+
+int add(int a, int b);
+
+
+---
+
+6. Using a Function Before Prototyping
+
+It causes a compilation error or unexpected behavior since the compiler doesn’t know the function's signature.
+
+
+---
+
+7. Declaration vs. Definition of a Function
+
+Declaration: Introduces the function name and signature (e.g., prototype).
+
+Definition: Provides the body (actual code) of the function.
+
+
+
+---
+
+8. Calling a void Function with No Parameters
+
+void greet() {
+    cout << "Hello!";
+}
+greet(); // function call
+
+
+---
+
+9. Concept of "Scope" in Functions
+
+Scope refers to the visibility and lifetime of variables. Variables inside functions are local unless passed or declared global.
+
+
+---
+
+10. What is Call by Reference in C++?
+
+Passing arguments by reference allows the function to modify the original variables using reference variables (&).
+
+
+---
+
+11. Call by Reference vs. Call by Value
+
+Call by value: Copies the variable's value.
+
+Call by reference: Passes the actual variable, allowing modification.
+
+
+
+---
+
+12. Swap Function using Call by Reference
+
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+
+---
+
+13. What is an Inline Function in C++?
+
+An inline function suggests the compiler to insert the function’s code directly at the call site, reducing function call overhead.
+
+
+---
+
+14. How Inline Functions Improve Performance
+
+They avoid function call overhead by replacing the function call with actual code (only for small functions).
+
+
+---
+
+15. Syntax for Declaring an Inline Function
+
+inline int square(int x) {
+    return x * x;
+}
+
+
+---
+
+16. What are Macros in C++?
+
+Macros are preprocessor directives using #define. They perform text substitution before compilation. They do not perform type checking, unlike inline functions.
+
+
+---
+
+17. Macros vs. Inline Functions
+
+Advantages of Macros: Simple and fast.
+
+Disadvantages: No type safety, hard to debug.
+
+Inline Functions: Type safe, scoped, easier to debug.
+
+
+
+---
+
+18. Example: Macro vs. Inline Function
+
+#define SQUARE(x) ((x)*(x)) // macro
+
+inline int square(int x) { return x * x; } // inline function
+
+
+---
+
+19. What is Function Overloading?
+
+Function overloading allows multiple functions with the same name but different parameter lists.
+
+
+---
+
+20. How Compiler Differentiates Overloaded Functions
+
+By their signature: number, types, and order of parameters.
+
+
+---
+
+21. Example of Overloaded Functions
+
+int add(int a, int b) { return a + b; }
+double add(double a, double b) { return a + b; }
+
+
+---
+
+22. What are Default Arguments in C++?
+
+Default arguments allow a function to have default values for parameters if no value is passed by the caller.
+
+void greet(string name = "User") {
+    cout << "Hello, " << name << "!";
+}
+
+
+---
+
+23. How do you specify default arguments in a function declaration?
+
+Default arguments are specified in the function declaration by assigning values to parameters:
+
+void greet(string name = "Guest");
+
+The default value is used if the caller omits the argument.
+
+
+---
+
+24. Rules for Using Default Arguments in Functions
+
+1. Default arguments must be provided from right to left:
+
+You can't have a default for the first parameter if a later one doesn't have one.
+
+
+// Correct
+void func(int a, int b = 10);
+
+// Incorrect
+void func(int a = 10, int b); // Error
+
+
+2. Defaults are usually given in the declaration, not in both the declaration and definition.
+
+
+3. Avoid ambiguity when calling overloaded functions that have default arguments.
+
+
+
+
+---
+
+25. Example of a Function with Default Arguments
+
+#include <iostream>
+using namespace std;
+
+void displayMessage(string message = "Hello, World!", int times = 1) {
+    for (int i = 0; i < times; ++i)
+        cout << message << endl;
+}
+
+int main() {
+    displayMessage();                    // Uses both default arguments
+    displayMessage("Welcome!");          // Uses default for 'times'
+    displayMessage("Hi there!", 3);      // Uses both user-provided arguments
+    return 0;
+}
+
+
+---
+
+// 26. Write a C++ program that prints "Hello, World!" using the main function.
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
+
+
+```
+// 27. Create a program that takes two integers as command line arguments and prints their sum.
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        cout << "Please provide two integers as command line arguments." << endl;
+        return 1;
+    }
+
+    int a = atoi(argv[1]);
+    int b = atoi(argv[2]);
+    cout << "Sum: " << (a + b) << endl;
+
+    return 0;
+}
+```
+
+---
+
+```
+// 28. Write a function prototype for a function that calculates the factorial of a number.
+int factorial(int n);
+```
+
+---
+
+```
+// 29. Implement a C++ program with a function prototype for a function that returns the maximum of three numbers.
+#include <iostream>
+using namespace std;
+
+int maxOfThree(int a, int b, int c); // Function prototype
+
+int main() {
+    cout << "Max: " << maxOfThree(10, 25, 15) << endl;
+    return 0;
+}
+
+int maxOfThree(int a, int b, int c) {
+    return (a > b && a > c) ? a : (b > c ? b : c);
+}
+```
+
+---
+
+```
+// 30. Write a simple function that calculates the area of a circle.
+#include <iostream>
+using namespace std;
+
+float areaOfCircle(float radius) {
+    return 3.14159 * radius * radius;
+}
+
+int main() {
+    float r = 5.0;
+    cout << "Area: " << areaOfCircle(r) << endl;
+    return 0;
+}
+```
+
+---
+
+```
+// 31. Implement a function that takes two integers and returns their product.
+#include <iostream>
+using namespace std;
+
+int product(int a, int b) {
+    return a * b;
+}
+
+int main() {
+    cout << "Product: " << product(4, 5) << endl;
+    return 0;
+}
+```
+
+---
+
+```
+// 32. Create a function that prints the elements of an array.
+#include <iostream>
+using namespace std;
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    printArray(arr, 5);
+    return 0;
+}
+```
+
+---
+
+```
+// 33. Write a function to swap two integers using call by reference.
+#include <iostream>
+using namespace std;
+
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    swap(x, y);
+    cout << "x = " << x << ", y = " << y << endl;
+    return 0;
+}
+```
+
+---
+
+```
+// 34. Implement a function that increments the value of an integer by 10 using call by reference.
+#include <iostream>
+using namespace std;
+
+void incrementByTen(int &num) {
+    num += 10;
+}
+
+int main() {
+    int x = 5;
+    incrementByTen(x);
+    cout << "x = " << x << endl;
+    return 0;
+}
+```
+
+---
+
+```
+// 35. Create a function that modifies the elements of an array using call by reference.
+#include <iostream>
+using namespace std;
+
+void modifyArray(int arr[], int size) {
+    for (int i = 0; i < size; i++)
+        arr[i] += 1;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    modifyArray(arr, 5);
+    for (int i = 0; i < 5; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+    return 0;
+}
+```
+
+---
+
+```
+// 36. Write an inline function that calculates the square of a number.
+#include <iostream>
+using namespace std;
+
+inline int square(int x) {
+    return x * x;
+}
+
+int main() {
+    cout << "Square of 6: " << square(6) << endl;
+    return 0;
+}
+
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+// 37. Inline function for cube
+inline int cube(int x) {
+    return x * x * x;
+}
+
+// 38. Inline sum function
+inline int sum(int a, int b) {
+    return a + b;
+}
+
+// 39. Macro vs Inline function for square
+#define SQUARE(x) ((x)*(x))
+inline int square(int x) {
+    return x * x;
+}
+
+// 40. Macro and inline for max
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+inline int maxInline(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+// 41. Overloaded area functions
+double area(double radius) {
+    return 3.14159 * radius * radius;
+}
+double area(double length, double width) {
+    return length * width;
+}
+double area(double base, double height, bool isTriangle) {
+    return 0.5 * base * height;
+}
+
+// 42. Overloaded max functions
+int maximum(int a, int b) {
+    return (a > b) ? a : b;
+}
+int maximum(int a, int b, int c) {
+    return maximum(maximum(a, b), c);
+}
+
+// 43. Overloaded print functions
+void print(int x) { cout << "Integer: " << x << endl; }
+void print(float x) { cout << "Float: " << x << endl; }
+void print(string x) { cout << "String: " << x << endl; }
+
+// 44. Compound interest with default args
+double compoundInterest(double p, double r = 5.0, int t = 2) {
+    return p * pow(1 + r / 100, t);
+}
+
+// 45. Greeting with default name
+void greet(string name = "Guest") {
+    cout << "Hello, " << name << "!" << endl;
+}
+
+// 46. Power function with default exponent
+double power(double base, int exponent = 2) {
+    return pow(base, exponent);
+}
+
+// 47. Recursive factorial
+int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+// 48. Array of function pointers
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+int multiply(int a, int b) { return a * b; }
+
+// 49. Function template
+template<typename T>
+T getMax(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+// 50. Function pointer and callback
+void callbackFunction() {
+    cout << "Callback function called!" << endl;
+}
+void callFunction(void (*func)()) {
+    func();
+}
+
+int main() {
+    // Demonstrating selected outputs
+    cout << "Cube of 3: " << cube(3) << endl;
+    cout << "Sum of 4 and 5: " << sum(4, 5) << endl;
+
+    cout << "Macro square of 4: " << SQUARE(4) << endl;
+    cout << "Inline square of 4: " << square(4) << endl;
+
+    cout << "Macro max of 5 and 8: " << MAX(5, 8) << endl;
+    cout << "Inline max of 5 and 8: " << maxInline(5, 8) << endl;
+
+    cout << "Area of circle (r=5): " << area(5.0) << endl;
+    cout << "Area of rectangle (4x6): " << area(4.0, 6.0) << endl;
+    cout << "Area of triangle (base=4, height=6): " << area(4.0, 6.0, true) << endl;
+
+    cout << "Max of 10 and 15: " << maximum(10, 15) << endl;
+    cout << "Max of 10, 15, 12: " << maximum(10, 15, 12) << endl;
+
+    print(5);
+    print(3.14f);
+    print("Hello");
+
+    cout << "Compound Interest: " << compoundInterest(1000) << endl;
+    greet();
+    cout << "2^5: " << power(2, 5) << ", 3^2 (default): " << power(3) << endl;
+
+    cout << "Factorial of 5: " << factorial(5) << endl;
+
+    int (*funcs[])(int, int) = {add, subtract, multiply};
+    cout << "Add using func pointer: " << funcs[0](10, 5) << endl;
+
+    cout << "Max (template): " << getMax(3.5, 2.1) << endl;
+
+    callFunction(callbackFunction);
+
+    return 0;
+}
+                                                             ASSIGNMENT NO.3
+
+ 
+1. What is an object in C++?
+
+An object is an instance of a class. It represents a specific implementation of the structure and behavior defined by the class.
+
+
+---
+
+2. What is a class in C++ and how does it differ from an object?
+
+A class is a blueprint or template for creating objects. An object is a concrete instance of a class.
+Class = Definition
+Object = Implementation
+
+
+---
+
+3. Explain the concept of encapsulation with an example.
+
+Encapsulation is the bundling of data and functions that operate on that data into a single unit (class), while restricting direct access to some components.
+
+class Account {
+private:
+    double balance;
+
+public:
+    void setBalance(double b) { balance = b; }
+    double getBalance() { return balance; }
+};
+
+
+---
+
+4. How do you define a class in C++?
+
+class MyClass {
+public:
+    int data;
+    void display();
+};
+
+
+---
+
+5. Describe the syntax for creating an object of a class.
+
+MyClass obj;  // Object creation
+
+
+---
+
+6. What are private members in a class and how are they accessed?
+
+Private members are accessible only within the class. They cannot be accessed directly from outside the class.
+
+
+---
+
+7. What are public members in a class and how are they accessed?
+
+Public members can be accessed from anywhere the object is visible.
+
+
+---
+
+8. Explain the significance of access specifiers in a class.
+
+Access specifiers (private, public, protected) control the visibility of class members to enforce data hiding and abstraction.
+
+
+---
+
+9. Provide an example of a class with both private and public members.
+
+class Person {
+private:
+    string name;
+
+public:
+    void setName(string n) { name = n; }
+    string getName() { return name; }
+};
+
+
+---
+
+10. How does data hiding work in C++?
+
+Data hiding is achieved using private and protected access specifiers, which restrict access to class internals, exposing only what is necessary via public methods.
+
+
+---
+
+11. What is a static data member in C++?
+
+A static data member belongs to the class rather than any object. It is shared among all objects.
+
+
+---
+
+12. How do you declare and initialize a static data member?
+
+Declaration (inside class):
+
+class MyClass {
+public:
+    static int count;
+};
+
+Initialization (outside class):
+
+int MyClass::count = 0;
+
+
+---
+
+13. What is a static function member in C++?
+
+A static function member can be called without creating an object and can access only static data members.
+
+
+---
+
+14. How do static function members differ from regular function members?
+
+Static functions cannot access non-static data or functions.
+
+Static functions belong to the class, not to a specific object.
+
+
+
+---
+
+15. Provide an example of a class with static data and function members.
+
+class Counter {
+private:
+    static int count;
+
+public:
+    static void increment() { count++; }
+    static int getCount() { return count; }
+};
+
+int Counter::count = 0;
+
+
+---
+
+16. What is a constructor in C++ and why is it important?
+
+A constructor is a special function automatically called when an object is created. It initializes object members.
+
+
+---
+
+17. Explain the different types of constructors in C++.
+
+Default constructor: No parameters.
+
+Parameterized constructor: Takes arguments.
+
+Copy constructor: Copies an object.
+
+Constructor with initializer list: Initializes members before body runs.
+
+
+
+---
+
+18. What is a default constructor and when is it used?
+
+It’s a constructor with no parameters, used when no arguments are provided during object creation.
+
+class A {
+public:
+    A() { cout << "Default constructor called"; }
+};
+
+
+---
+
+19. How do parameterized constructors work?
+
+They take arguments and allow initialization with custom values.
+
+class A {
+public:
+    int x;
+    A(int val) { x = val; }
+};
+
+
+---
+
+20. What is a copy constructor and what is its purpose?
+
+It creates a new object as a copy of an existing object.
+
+A(const A& obj) { this->x = obj.x; }
+
+
+---
+
+21. Explain the concept of constructor overloading.
+
+It’s defining multiple constructors with different parameter lists in the same class.
+
+
+---
+
+22. How does a constructor initializer list work?
+
+It initializes members before the constructor body runs.
+
+class A {
+    int x;
+public:
+    A(int val) : x(val) {}
+};
+
+
+---
+
+23. What is a destructor in C++ and what is its purpose?
+
+A destructor cleans up resources when an object is destroyed.
+
+
+---
+
+24. How is a destructor declared and defined?
+
+It’s declared with a tilde ~ before the class name.
+
+class A {
+public:
+    ~A() { cout << "Destructor called"; }
+};
+
+
+---
+
+25. What happens if a destructor is not explicitly defined in a class?
+
+C++ automatically provides a default destructor if none is defined.
+
+
+---
+
+26. Explain the concept of automatic and dynamic storage duration in relation to destructors.
+
+Automatic: Destructor is called automatically when object goes out of scope.
+
+Dynamic: Must manually delete object to call destructor (delete ptr;).
+
+
+
+---
+
+27. How do destructors differ from constructors?
+
+Constructor initializes; destructor cleans up.
+
+Constructor can be overloaded; destructor cannot.
+
+Constructor may take parameters; destructor never does.
+
+
+
+---
+
+28. What is operator overloading in C++ and why is it useful?
+
+It allows you to redefine how operators work for user-defined types, improving code readability.
+
+
+---
+
+29. Describe the syntax for overloading an operator.
+
+class Complex {
+    int real, imag;
+public:
+    Complex operator+(const Complex& obj) {
+        return Complex(real + obj.real, imag + obj.imag);
+    }
+};
+
+
+---
+
+30. Which operators can and cannot be overloaded in C++?
+
+Can be overloaded: +, -, *, ==, [], (), ++, --, etc.
+Cannot be overloaded: ::, ., .*, ?:, sizeof, typeid.
+
+[4:32 pm, 06/05/2025] Ojasw Lowanshi: 31. Provide an example of overloading the "+" operator for a custom class.
+
+class Complex {
+    int real, imag;
+public:
+    Complex(int r = 0, int i = 0) : real(r), imag(i) {}
+    Complex operator+(const Complex& c) {
+        return Complex(real + c.real, imag + c.imag);
+    }
+};
+
+
+---
+
+32. Explain the concept of friend functions in the context of operator overloading.
+
+Friend functions can access private members of a class and are often used when operator overloading requires access to both operands that are not members of the same class.
+
+
+---
+
+33. What is a friend function in C++ and how is it declared?
+
+A friend function is a non-member function that has access to private and protected members of a class. It is declared using the friend keyword inside the class.
+
+class MyClass {
+    friend void show(MyClass obj);
+};
+
+
+---
+
+34. How do friend functions differ from member functions?
+
+Friend functions are not part of the class but can access its private members.
+
+Member functions are defined within the class and operate on this object.
+
+
+
+---
+
+35. Explain the benefits and potential drawbacks of using friend functions.
+
+Benefits:
+
+Allows external functions to access private data for certain operations (like operator overloading).
+Drawbacks:
+
+Breaks encapsulation by exposing internals.
+
+Increases coupling between classes/functions.
+
+
+
+---
+
+36. What is inheritance in C++ and why is it important?
+
+Inheritance allows a class to acquire properties and behavior (data and functions) from another class, promoting code reuse and hierarchical classification.
+
+
+---
+
+37. Explain the different types of inheritance in C++.
+
+Single: One base, one derived.
+
+Multiple: Multiple bases, one derived.
+
+Multilevel: Derived from a derived class.
+
+Hierarchical: One base, multiple derived.
+
+Hybrid: Combination of two or more types.
+
+
+
+---
+
+38. How do you implement single inheritance in C++?
+
+class Base {
+public:
+    void display() { cout << "Base class"; }
+};
+
+class Derived : public Base {
+    // Inherits display()
+};
+
+
+---
+
+39. What is multiple inheritance and how does it differ from single inheritance?
+
+In multiple inheritance, a class inherits from more than one base class. In single, it inherits from only one.
+
+class A { };
+class B { };
+class C : public A, public B { };
+
+
+---
+
+40. Describe hierarchical inheritance with an example.
+
+class Base {
+public:
+    void show() { cout << "Base"; }
+};
+
+class Derived1 : public Base { };
+class Derived2 : public Base { };
+
+Explanation: One base class, multiple derived classes.
+
+
+---
+
+41. What is multilevel inheritance and how is it implemented in C++?
+
+class A {
+public:
+    void showA() { cout << "A"; }
+};
+
+class B : public A {
+public:
+    void showB() { cout << "B"; }
+};
+
+class C : public B {
+public:
+    void showC() { cout << "C"; }
+};
+
+Explanation: Class C inherits from B, which inherits from A.
+
+
+---
+
+42. Explain the concept of hybrid inheritance.
+
+Hybrid inheritance combines multiple types of inheritance, often multiple + hierarchical or multiple + multilevel. It can lead to the diamond problem, which is handled using virtual inheritance.
+
+
+---
+
+43. What are access modifiers in C++ and what are the different types?
+
+Access modifiers control access to class members:
+
+public – accessible from anywhere.
+
+private – accessible only within the class.
+
+protected – accessible within the class and its derived classes.
+
+
+---
+
+44. How do public, private, and protected access modifiers affect inheritance?
+
+
+---
+
+45. Explain how access modifiers control member accessibility in derived classes.
+
+Public members of the base are accessible according to the inheritance type.
+
+Protected members are accessible in the derived class but not outside.
+
+Private members are never directly accessible in the derived class.
+
+
+
+---
+
+46. What is function overriding in the context of inheritance?
+
+When a derived class provides a specific implementation of a function that is already defined in its base class.
+
+
+---
+
+47. How do you override a base class function in a derived class?
+
+class Base {
+public:
+    virtual void display() { cout << "Base"; }
+};
+
+class Derived : public Base {
+public:
+    void display() override { cout << "Derived"; }
+};
+
+
+---
+
+48. Explain the use of the "virtual" keyword in function overriding.
+
+virtual tells the compiler to use dynamic binding, allowing the derived class's function to be called through a base class pointer.
+
+
+---
+
+49. What is the significance of the "override" specifier in C++11 and later?
+
+It explicitly indicates that a function is intended to override a base class method. Helps catch errors like mismatched function signatures.
+
+
+---
+
+50. What is a virtual base class in C++ and why is it used?
+
+Used in multiple inheritance to avoid duplicate instances of a common base class (i.e., diamond problem).
+
+
+---
+
+51. How do you declare and implement a virtual base class?
+
+class A {
+public:
+    int x;
+};
+
+class B : virtual public A { };
+class C : virtual public A { };
+class D : public B, public C { };  // Only one A instance
+
+
+---
+
+52. Explain the role of virtual base classes in resolving ambiguity in multiple inheritance.
+
+Without virtual inheritance, multiple base classes can lead to duplicate copies of a common ancestor. Virtual base classes ensure a single shared instance.
+
+
+---
+
+53. Provide an example of using a virtual base class to avoid the diamond problem in inheritance
+
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int x;
+};
+
+class B : virtual public A { };
+class C : virtual public A { };
+
+class D : public B, public C {
+public:
+    void setX(int val) { x = val; }  // No ambiguity
+    void showX() { cout << x; }
+};
+
+int main() {
+    D obj;
+    obj.setX(10);
+    obj.showX();  // Output: 10
+    return 0;
+}
+
+54. Class Person with private attributes and public methods
+
+class Person {
+private:
+    string name;
+    int age;
+
+public:
+    void setData(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    string getName() { return name; }
+    int getAge() { return age; }
+};
+
+
+---
+
+55. Class Student inheriting from Person with studentID
+
+class Student : public Person {
+private:
+    string studentID;
+
+public:
+    void setStudentID(string id) { studentID = id; }
+    string getStudentID() { return studentID; }
+};
+
+
+---
+
+56. Class Car with attributes and method to display details
+
+class Car {
+private:
+    string make, model;
+    int year;
+
+public:
+    Car(string m, string mod, int y) : make(m), model(mod), year(y) {}
+
+    void display() {
+        cout << "Make: " << make << ", Model: " << model << ", Year: " << year << endl;
+    }
+};
+
+
+---
+
+57. Array of Car objects and displaying their details
+
+int main() {
+    Car cars[] = {
+        Car("Toyota", "Corolla", 2020),
+        Car("Honda", "Civic", 2021),
+        Car("Ford", "Focus", 2019)
+    };
+
+    for (int i = 0; i < 3; i++) {
+        cars[i].display();
+    }
+
+    return 0;
+}
+
+
+---
+
+58. Class BankAccount with deposit and withdraw methods
+
+class BankAccount {
+private:
+    int accountNumber;
+    double balance;
+
+public:
+    BankAccount(int accNum, double bal) {
+        accountNumber = accNum;
+        balance = bal;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance)
+            balance -= amount;
+        else
+            cout << "Insufficient balance!" << endl;
+    }
+
+    void display() {
+        cout << "Account: " << accountNumber << ", Balance: $" << balance << endl;
+    }
+};
+
+59. Rectangle class with area and perimeter
+
+class Rectangle {
+private:
+    double length, width;
+
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+
+    double area() { return length * width; }
+    double perimeter() { return 2 * (length + width); }
+};
+
+
+---
+
+60. Employee class
+
+class Employee {
+private:
+    string name, position;
+    double salary;
+
+public:
+    Employee(string n, string p, double s) : name(n), position(p), salary(s) {}
+
+    void display() {
+        cout << "Name: " << name << ", Position: " << position << ", Salary: " << salary << endl;
+    }
+};
+
+
+---
+
+61. Counter class with static data member
+
+class Counter {
+private:
+    static int count;
+
+public:
+    Counter() { count++; }
+
+    static int getCount() { return count; }
+};
+
+int Counter::count = 0;
+
+
+---
+
+62. Math class with static functions
+
+class Math {
+public:
+    static int add(int a, int b) { return a + b; }
+    static int subtract(int a, int b) { return a - b; }
+    static int multiply(int a, int b) { return a * b; }
+    static double divide(int a, int b) { return b != 0 ? (double)a / b : 0; }
+};
+
+
+---
+
+63. Student class with static member tracking total students
+
+class Student {
+private:
+    static int total;
+
+public:
+    Student() { total++; }
+
+    static int getTotalStudents() { return total; }
+};
+
+int Student::total = 0;
+
+
+---
+
+64. Book class with parameterized constructor
+
+class Book {
+private:
+    string title, author;
+    int year;
+
+public:
+    Book(string t, string a, int y) : title(t), author(a), year(y) {}
+
+    void display() {
+        cout << "Title: " << title << ", Author: " << author << ", Year: " << year << endl;
+    }
+};
+
+
+---
+
+65. Point class with default, parameterized, and copy constructors
+
+class Point {
+private:
+    int x, y;
+
+public:
+    Point() : x(0), y(0) {}
+    Point(int a, int b) : x(a), y(b) {}
+    Point(const Point &p) : x(p.x), y(p.y) {}
+
+    void display() { cout << "(" << x << ", " << y << ")" << endl; }
+};
+
+
+---
+
+66. Matrix class with parameterized constructor
+
+class Matrix {
+private:
+    int rows, cols;
+    int **arr;
+
+public:
+    Matrix(int r, int c) : rows(r), cols(c) {
+        arr = new int*[rows];
+        for (int i = 0; i < rows; i++)
+            arr[i] = new int[cols]{0};
+    }
+
+    ~Matrix() {
+        for (int i = 0; i < rows; i++)
+            delete[] arr[i];
+        delete[] arr;
+    }
+};
+
+
+---
+
+67. FileHandler class with destructor to close file
+
+#include <fstream>
+class FileHandler {
+private:
+    ofstream file;
+
+public:
+    FileHandler(const string& filename) {
+        file.open(filename);
+    }
+
+    ~FileHandler() {
+        if (file.is_open()) file.close();
+    }
+
+    void write(const string& text) {
+        if (file.is_open()) file << text;
+    }
+};
+
+
+---
+
+68. DynamicArray with destructor
+
+class DynamicArray {
+private:
+    int *arr;
+    int size;
+
+public:
+    DynamicArray(int s) : size(s) {
+        arr = new int[size];
+    }
+
+    ~DynamicArray() {
+        delete[] arr;
+    }
+};
+
+
+---
+
+69. Logger with destructor that logs messages
+
+class Logger {
+public:
+    ~Logger() {
+        cout << "Logger destroyed. Logging end of session." << endl;
+    }
+};
+
+
+---
+
+70. Overload "+" for Complex class
+
+class Complex {
+private:
+    double real, imag;
+
+public:
+    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
+
+    Complex operator+(const Complex &c) {
+        return Complex(real + c.real, imag + c.imag);
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+
+---
+
+71. Overload << and >> for Fraction class
+
+class Fraction {
+private:
+    int numerator, denominator;
+
+public:
+    Fraction() : numerator(0), denominator(1) {}
+
+    friend istream& operator>>(istream &in, Fraction &f) {
+        cout << "Enter numerator and denominator: ";
+        in >> f.numerator >> f.denominator;
+        return in;
+    }
+
+    friend ostream& operator<<(ostream &out, const Fraction &f) {
+        out << f.numerator << "/" << f.denominator;
+        return out;
+    }
+};
+
+72. Overload == for class Date
+
+class Date {
+    int d, m, y;
+public:
+    Date(int dd, int mm, int yy): d(dd), m(mm), y(yy) {}
+    bool operator==(const Date& other) { return d==other.d && m==other.m && y==other.y; }
+};
+
+73. Overload [] for class Vector
+
+class Vector {
+    int arr[10];
+public:
+    int& operator[](int i) { return arr[i]; }
+};
+
+74. Box with friend function to calculate volume
+
+class Box {
+    int l, b, h;
+public:
+    Box(int x, int y, int z): l(x), b(y), h(z) {}
+    friend int volume(Box);
+};
+int volume(Box b) { return b.l * b.b * b.h; }
+
+75. Circle with friend function to calculate area
+
+class Circle {
+    float r;
+public:
+    Circle(float rad): r(rad) {}
+    friend float area(Circle);
+};
+float area(Circle c) { return 3.14 * c.r * c.r; }
+
+76. Distance with friend function to add
+
+class Distance {
+    int m;
+public:
+    Distance(int meters): m(meters) {}
+    friend int add(Distance, Distance);
+};
+int add(Distance a, Distance b) { return a.m + b.m; }
+
+77. Shape with derived Circle, Rectangle, Triangle
+
+class Shape { public: void draw() {} };
+class Circle : public Shape {};
+class Rectangle : public Shape {};
+class Triangle : public Shape {};
+
+78. Animal with Dog, Cat, Bird
+
+class Animal { public: void sound() {} };
+class Dog : public Animal {};
+class Cat : public Animal {};
+class Bird : public Animal {};
+
+79. Vehicle with Car and Bike
+
+class Vehicle { public: void info() {} };
+class Car : public Vehicle {};
+class Bike : public Vehicle {};
+
+80. Single Inheritance: Person → Employee
+
+class Person { public: void show() {} };
+class Employee : public Person {};
+
+81. Multiple Inheritance
+
+class Child1 { public: void f1() {} };
+class Child2 { public: void f2() {} };
+class Parent : public Child1, public Child2 {};
+
+82. Hierarchical Inheritance
+
+class Base { public: void show() {} };
+class Derived1 : public Base {};
+class Derived2 : public Base {};
+class Derived3 : public Base {};
+
+83. Multilevel Inheritance
+
+class Base { public: void display() {} };
+class Intermediate : public Base {};
+class Derived : public Intermediate {};
+
+
+---
+85. Class Library with private, protected, and public members:
+
+#include <iostream>
+using namespace std;
+
+class Library {
+private:
+    string bookName;
+
+protected:
+    int bookID;
+
+public:
+    void setBook(string name, int id) {
+        bookName = name;
+        bookID = id;
+    }
+
+    void showBook() {
+        cout << "Book Name: " << bookName << ", Book ID: " << bookID << endl;
+    }
+};
+
+int main() {
+    Library lib;
+    lib.setBook("C++ Programming", 101);
+    lib.showBook();
+    return 0;
+}
+
+
+---
+
+86. Class Account with private data and public access methods:
+
+#include <iostream>
+using namespace std;
+
+class Account {
+private:
+    int accountNumber;
+    double balance;
+
+public:
+    void setDetails(int accNum, double bal) {
+        accountNumber = accNum;
+        balance = bal;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance)
+            balance -= amount;
+        else
+            cout << "Insufficient balance." << endl;
+    }
+
+    void display() {
+        cout << "Account No: " << accountNumber << ", Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Account acc;
+    acc.setDetails(12345, 5000);
+    acc.deposit(1500);
+    acc.withdraw(2000);
+    acc.display();
+    return 0;
+}
+
+
+---
+
+87. Function Overriding with Shape and Circle:
+
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual void draw() {
+        cout << "Drawing a shape." << endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a circle." << endl;
+    }
+};
+
+int main() {
+    Shape* s;
+    Circle c;
+    s = &c;
+    s->draw();  // Calls Circle's draw()
+    return 0;
+}
+
+
+---
+
+88. Overridden methods in Employee and Manager:
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+public:
+    virtual void work() {
+        cout << "Employee is working." << endl;
+    }
+};
+
+class Manager : public Employee {
+public:
+    void work() override {
+        cout << "Manager is managing." << endl;
+    }
+};
+
+int main() {
+    Employee* emp;
+    Manager mgr;
+    emp = &mgr;
+    emp->work();  // Calls Manager's work()
+    return 0;
+}
+
+
+---
+
+89. Virtual Base Class Entity with Person and Organization:
+
+#include <iostream>
+using namespace std;
+
+class Entity {
+public:
+    void showEntity() {
+        cout << "This is an Entity." << endl;
+    }
+};
+
+class Person : virtual public Entity {
+public:
+    void showPerson() {
+        cout << "This is a Person." << endl;
+    }
+};
+
+class Organization : virtual public Entity {
+public:
+    void showOrganization() {
+        cout << "This is an Organization." << endl;
+    }
+};
+
+class Member : public Person, public Organization {
+public:
+    void showMember() {
+        cout << "This is a Member of both Person and Organization." << endl;
+    }
+};
+
+int main() {
+    Member m;
+    m.showEntity();       // No ambiguity due to virtual inheritance
+    m.showPerson();
+    m.showOrganization();
+    m.showMember();
+    return 0;
+}
+
+90. Virtual base class to avoid diamond problem in Animal class:
+
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    void sound() {
+        cout << "Animal sound" << endl;
+    }
+};
+
+class Mammal : virtual public Animal {
+};
+
+class Bird : virtual public Animal {
+};
+
+class Bat : public Mammal, public Bird {
+};
+
+int main() {
+    Bat b;
+    b.sound();  // No ambiguity due to virtual inheritance
+    return 0;
+}
+
+
+---
+
+91. Class Polynomial with add and multiply functions:
+
+#include <iostream>
+using namespace std;
+
+class Polynomial {
+    int coeff[3];  // Assume polynomial of degree 2: ax^2 + bx + c
+
+public:
+    void set(int a, int b, int c) {
+        coeff[0] = a;
+        coeff[1] = b;
+        coeff[2] = c;
+    }
+
+    void display() {
+        cout << coeff[0] << "x^2 + " << coeff[1] << "x + " << coeff[2] << endl;
+    }
+
+    Polynomial add(Polynomial p) {
+        Polynomial result;
+        result.set(coeff[0] + p.coeff[0], coeff[1] + p.coeff[1], coeff[2] + p.coeff[2]);
+        return result;
+    }
+};
+
+int main() {
+    Polynomial p1, p2, p3;
+    p1.set(1, 2, 3);
+    p2.set(3, 4, 5);
+    p3 = p1.add(p2);
+
+    cout << "P1: "; p1.display();
+    cout << "P2: "; p2.display();
+    cout << "Sum: "; p3.display();
+
+    return 0;
+}
+
+
+---
+
+92. Class SparseMatrix for addition and multiplication:
+
+#include <iostream>
+using namespace std;
+
+class SparseMatrix {
+    int mat[3][3];
+
+public:
+    void setData(int m[3][3]) {
+        for (int i = 0; i < 3; ++i)
+            for (int j = 0; j < 3; ++j)
+                mat[i][j] = m[i][j];
+    }
+
+    SparseMatrix add(SparseMatrix b) {
+        SparseMatrix result;
+        int sum[3][3];
+        for (int i = 0; i < 3; ++i)
+            for (int j = 0; j < 3; ++j)
+                sum[i][j] = mat[i][j] + b.mat[i][j];
+        result.setData(sum);
+        return result;
+    }
+
+    void display() {
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j)
+                cout << mat[i][j] << " ";
+            cout << endl;
+        }
+    }
+};
+
+int main() {
+    int a[3][3] = {{1,0,0},{0,2,0},{0,0,3}};
+    int b[3][3] = {{0,1,0},{0,0,2},{3,0,0}};
+
+    SparseMatrix m1, m2, m3;
+    m1.setData(a);
+    m2.setData(b);
+    m3 = m1.add(m2);
+
+    cout << "Sum Matrix:\n";
+    m3.display();
+    return 0;
+}
+
+
+---
+
+93. Class Time with add, subtract, and compare methods:
+
+#include <iostream>
+using namespace std;
+
+class Time {
+    int hours, minutes;
+
+public:
+    void setTime(int h, int m) {
+        hours = h;
+        minutes = m;
+    }
+
+    void add(Time t) {
+        minutes += t.minutes;
+        hours += t.hours + (minutes / 60);
+        minutes %= 60;
+    }
+
+    bool isEqual(Time t) {
+        return hours == t.hours && minutes == t.minutes;
+    }
+
+    void display() {
+        cout << hours << " hrs " << minutes << " mins" << endl;
+    }
+};
+
+int main() {
+    Time t1, t2;
+    t1.setTime(2, 50);
+    t2.setTime(1, 20);
+    t1.add(t2);
+
+    cout << "Total Time: ";
+    t1.display();
+
+    cout << "Times are " << (t1.isEqual(t2) ? "equal" : "not equal") << endl;
+    return 0;
+}
+
+
+---
+
+94. Class BigNumber for arithmetic on large numbers (string-based):
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+class BigNumber {
+    string number;
+
+public:
+    BigNumber(string num) : number(num) {}
+
+    BigNumber add(BigNumber b) {
+        string num1 = number, num2 = b.number;
+        if (num1.length() < num2.length()) swap(num1, num2);
+        reverse(num1.begin(), num1.end());
+        reverse(num2.begin(), num2.end());
+
+        string result = "";
+        int carry = 0;
+        for (size_t i = 0; i < num1.length(); ++i) {
+            int digit1 = num1[i] - '0';
+            int digit2 = (i < num2.length()) ? num2[i] - '0' : 0;
+            int sum = digit1 + digit2 + carry;
+            carry = sum / 10;
+            result += (sum % 10) + '0';
+        }
+
+        if (carry) result += carry + '0';
+        reverse(result.begin(), result.end());
+        return BigNumber(result);
+    }
+
+    void display() {
+        cout << number << endl;
+    }
+};
+
+int main() {
+    BigNumber n1("9999999999999999");
+    BigNumber n2("1");
+    BigNumber sum = n1.add(n2);
+
+    cout << "Sum: ";
+    sum.display();
+    return 0;
+}
+
+95. FileCompressor class (structure only, no actual compression logic):
+
+#include <iostream>
+using namespace std;
+
+class FileCompressor {
+public:
+    void compress() {
+        cout << "Compressing file..." << endl;
+    }
+
+    void decompress() {
+        cout << "Decompressing file..." << endl;
+    }
+};
+
+int main() {
+    FileCompressor fc;
+    fc.compress();
+    fc.decompress();
+    return 0;
+}
+
+
+---
+
+96. Network class to simulate packet transmission:
+
+#include <iostream>
+using namespace std;
+
+class Network {
+public:
+    void sendPacket(string data) {
+        cout << "Sending: " << data << endl;
+    }
+
+    void receivePacket() {
+        cout << "Packet received!" << endl;
+    }
+};
+
+int main() {
+    Network net;
+    net.sendPacket("Hello World");
+    net.receivePacket();
+    return 0;
+}
+
+
+---
+
+97. Cache class for storing and retrieving data:
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+class Cache {
+    map<string, string> data;
+public:
+    void store(string key, string value) {
+        data[key] = value;
+    }
+
+    string retrieve(string key) {
+        return data.count(key) ? data[key] : "Not Found";
+    }
+};
+
+int main() {
+    Cache c;
+    c.store("user1", "Alice");
+    cout << "Retrieved: " << c.retrieve("user1") << endl;
+    return 0;
+}
+
+
+---
+
+98. Game class simulating player actions:
+
+#include <iostream>
+using namespace std;
+
+class Game {
+    int score = 0;
+public:
+    void jump() { cout << "Player jumped!\n"; score += 10; }
+    void run() { cout << "Player ran!\n"; score += 5; }
+    void showScore() { cout << "Score: " << score << endl; }
+};
+
+int main() {
+    Game g;
+    g.run();
+    g.jump();
+    g.showScore();
+    return 0;
+}
+
+                                                          ASSIGNMENT NO.4
+
+1. Polymorphism in C++: It allows objects to be treated as instances of their base class rather than their derived class. It's important because it enables flexibility and reusability in code through function overriding and function overloading.
+
+
+2. Compile-time (Static) Polymorphism: Achieved using function overloading and operator overloading. Example:
+
+class Print {
+public:
+    void display(int i) { cout << i; }
+    void display(double d) { cout << d; }
+};
+
+
+3. Runtime (Dynamic) Polymorphism: Achieved using virtual functions and inheritance. Example:
+
+class Base {
+public:
+    virtual void show() { cout << "Base"; }
+};
+class Derived : public Base {
+public:
+    void show() override { cout << "Derived"; }
+};
+
+
+4. Difference: Static polymorphism is resolved at compile time; dynamic is resolved at runtime. Static is faster, but dynamic offers more flexibility.
+
+
+5. Implementation in C++: Using function overloading, operator overloading (for static) and virtual functions with inheritance (for dynamic).
+
+---
+
+6. What are pointers in C++ and how do they work?
+Pointers store the memory address of another variable. They are used for dynamic memory, arrays, and object handling.
+
+7. Explain the syntax for declaring and initializing pointers.
+
+int a = 5;
+int* ptr = &a;  // ptr holds address of a
+
+8. How do you access the value pointed to by a pointer?
+Using the dereference operator *:
+
+cout << *ptr;  // prints value of a
+
+9. Describe the concept of pointer arithmetic.
+You can perform operations like ptr++, ptr--, ptr + n, ptr - n to move through contiguous memory (e.g., arrays).
+
+10. What are the common pitfalls when using pointers?
+Uninitialized pointers, memory leaks, dangling pointers, and invalid memory access.
+
+11. How are pointers used with objects in C++?
+Pointers can point to objects to access members using ->:
+
+MyClass* obj = new MyClass();
+obj->method();
+
+12. Explain the process of dynamically allocating objects using pointers.
+Use new to allocate and delete to deallocate:
+
+MyClass* obj = new MyClass();
+// ... use obj
+delete obj;
+
+13. Provide an example of accessing object members using pointers.
+
+class A {
+public:
+    void show() { cout << "Hello"; }
+};
+
+A* ptr = new A();
+ptr->show();  // Access using pointer
+
+14. What is the difference between a pointer to an object and a reference to an object?
+Pointers can be null and reassigned; references must be initialized and cannot be null or changed.
+
+15. How do you release dynamically allocated objects in C++?
+Use delete for single objects and delete[] for arrays:
+
+delete obj;
+delete[] arr;
+
+
+---
+
+16. What is the this pointer in C++ and what is its significance?
+this is an implicit pointer available in non-static member functions, pointing to the calling object.
+
+17. How is the this pointer used in member functions?
+It helps distinguish between member variables and parameters, or to return the current object:
+
+class A {
+    int x;
+public:
+    A(int x) { this->x = x; }
+};
+
+18. Explain how the this pointer can be used to return the current object.
+You can return *this in a method for chaining:
+
+A& setX(int x) {
+    this->x = x;
+    return *this;
+}
+
+19. What is a virtual function in C++ and why is it used?
+A virtual function allows derived classes to override a method. It supports runtime (dynamic) polymorphism.
+
+20. Describe the syntax for declaring a virtual function.
+
+class Base {
+public:
+    virtual void display();  // can be overridden
+};
+
+---
+
+21. Explain the concept of a vtable (virtual table) and its role in virtual functions.
+A vtable is a table of function pointers used by C++ to implement runtime polymorphism. Each class with virtual functions has its own vtable.
+
+22. What is a pure virtual function and how is it declared?
+A pure virtual function is declared by assigning = 0 in the base class:
+
+virtual void display() = 0;
+
+23. Provide an example of a class with pure virtual functions.
+
+class Shape {
+public:
+    virtual void draw() = 0; // pure virtual
+};
+
+24. What are the implications of having pure virtual functions in a class?
+It makes the class abstract—objects of it can't be created. Derived classes must override all pure virtual functions.
+
+25. How is polymorphism implemented using inheritance and virtual functions?
+Base class declares virtual methods; derived classes override them. Polymorphism happens when a base class pointer points to a derived object.
+
+26. Provide an example of implementing polymorphism with base and derived classes.
+
+class Shape {
+public: virtual void draw() { cout << "Drawing shape"; } };
+class Circle : public Shape {
+public: void draw() override { cout << "Drawing circle"; } };
+
+27. Explain the concept of late binding in the context of polymorphism.
+Late binding means the method call is resolved at runtime rather than compile-time—this happens with virtual functions.
+
+28. How does the compiler manage polymorphism in C++?
+It uses vtable and vptr (pointer to vtable) for each object to determine which function to invoke at runtime.
+
+29. What is an abstract class in C++?
+A class with at least one pure virtual function. It acts as a blueprint for derived classes.
+
+30. How do abstract classes differ from regular classes?
+Abstract classes cannot be instantiated, while regular classes can. Abstract classes are used for defining interfaces.
+
+31. Explain the role of abstract methods in abstract classes.
+Abstract methods (pure virtual functions) force derived classes to provide specific implementations, ensuring consistent interfaces.
+
+
+---
+
+32. Provide an example of defining and using an abstract class.
+
+class Animal {
+public:
+    virtual void sound() = 0; // Abstract method
+};
+class Dog : public Animal {
+public:
+    void sound() override { cout << "Bark"; }
+};
+
+
+---
+
+33. What are the benefits of using abstract classes in C++?
+
+Define interfaces
+
+Promote code reuse and flexibility
+
+Enforce consistent behavior in derived classes
+
+
+
+---
+
+34. What is exception handling in C++ and why is it important?
+It’s a mechanism to handle runtime errors gracefully using try, catch, and throw, preventing crashes.
+
+
+---
+
+35. Describe the syntax for throwing and catching exceptions in C++.
+
+try {
+    throw "Error occurred";
+} catch (const char* msg) {
+    cout << msg;
+}
+
+
+---
+
+36. Explain the concept of try, catch, and throw blocks.
+
+try: code that might cause an exception
+
+throw: used to signal an exception
+
+catch: handles the thrown exception
+
+
+
+---
+
+37. What is the role of the catch block in exception handling?
+It receives and processes exceptions thrown from a try block.
+
+
+---
+
+38. Provide an example of handling multiple exceptions in C++.
+
+try {
+    throw 10;
+} catch (int x) {
+    cout << "Integer exception";
+} catch (...) {
+    cout << "Generic exception";
+}
+
+
+---
+
+39. How does the throw keyword work in exception handling?
+It signals an error condition and transfers control to the nearest matching catch block.
+
+
+---
+
+40. What is the purpose of the finally block in exception handling?
+C++ doesn’t have a finally block. Instead, destructors are used to release resources automatically (RAII concept).
+
+
+---
+
+Would you like the next 10 questions (41–50)?
+[5:02 pm, 06/05/2025] Ojasw Lowanshi: Here are concise answers and examples for questions 41 to 50:
+
+
+---
+
+41. How do you create custom exception classes in C++?
+Define a class that inherits from std::exception or any base class.
+
+class MyException : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Custom Exception Occurred";
+    }
+};
+
+
+---
+
+42. What are templates in C++ and why are they useful?
+Templates allow writing generic code that works with any data type, enhancing code reuse and type safety.
+
+
+---
+
+43. Describe the syntax for defining a function template.
+
+template <typename T>
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+
+---
+
+44. Provide an example of a function template that performs a generic operation.
+
+template <typename T>
+void swapValues(T &a, T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+
+---
+
+45. What is a class template and how is it different from a function template?
+A class template allows creating generic classes, while function templates define generic functions.
+
+
+---
+
+46. Explain the syntax for defining a class template.
+
+template <class T>
+class Box {
+    T value;
+public:
+    void set(T v) { value = v; }
+    T get() { return value; }
+};
+
+
+---
+
+47. Provide an example of a class template that implements a generic data structure.
+
+template <typename T>
+class Stack {
+    vector<T> elements;
+public:
+    void push(T item) { elements.push_back(item); }
+    T pop() {
+        T item = elements.back();
+        elements.pop_back();
+        return item;
+    }
+};
+
+
+---
+
+48. How do you instantiate a template class in C++?
+
+Stack<int> intStack;
+Stack<string> stringStack;
+
+
+---
+
+49. What are the advantages of using templates over traditional class inheritance?
+
+Type independence
+
+No runtime overhead
+
+Compile-time type checking
+
+More flexible for generic programming
+
+
+
+---
+
+50. How do templates promote code reusability in C++?
+Templates allow writing one piece of code that works with many data types, reducing duplication and enhancing maintainability.
+
+
+---
+
+51. Virtual functions to calculate area for shapes
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Shape {
+public:
+    virtual float area() = 0;
+};
+
+class Circle : public Shape {
+    float r;
+public:
+    Circle(float radius) : r(radius) {}
+    float area() override { return 3.14 * r * r; }
+};
+
+class Rectangle : public Shape {
+    float l, b;
+public:
+    Rectangle(float len, float br) : l(len), b(br) {}
+    float area() override { return l * b; }
+};
+
+class Triangle : public Shape {
+    float b, h;
+public:
+    Triangle(float base, float height) : b(base), h(height) {}
+    float area() override { return 0.5 * b * h; }
+};
+
+int main() {
+    Shape* s;
+    Circle c(5);
+    Rectangle r(4, 6);
+    Triangle t(4, 3);
+    s = &c; cout << "Circle Area: " << s->area() << endl;
+    s = &r; cout << "Rectangle Area: " << s->area() << endl;
+    s = &t; cout << "Triangle Area: " << s->area() << endl;
+    return 0;
+}
+
+
+---
+
+52. Virtual function speak() in Animal hierarchy
+
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void speak() { cout << "Animal speaks" << endl; }
+};
+
+class Dog : public Animal {
+public:
+    void speak() override { cout << "Dog barks" << endl; }
+};
+
+class Cat : public Animal {
+public:
+    void speak() override { cout << "Cat meows" << endl; }
+};
+
+class Bird : public Animal {
+public:
+    void speak() override { cout << "Bird chirps" << endl; }
+};
+
+int main() {
+    Animal* a;
+    Dog d; Cat c; Bird b;
+    a = &d; a->speak();
+    a = &c; a->speak();
+    a = &b; a->speak();
+    return 0;
+}
+
+
+---
+
+53. Function overriding in Employee, Manager, and Worker
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+public:
+    virtual void display() { cout << "Generic Employee" << endl; }
+};
+
+class Manager : public Employee {
+public:
+    void display() override { cout << "Manager Display" << endl; }
+};
+
+class Worker : public Employee {
+public:
+    void display() override { cout << "Worker Display" << endl; }
+};
+
+int main() {
+    Employee* e;
+    Manager m;
+    Worker w;
+    e = &m; e->display();
+    e = &w; e->display();
+    return 0;
+}
+
+
+---
+
+54. Pointer arithmetic with array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int* ptr = arr;
+
+    for (int i = 0; i < 5; i++) {
+        cout << *(ptr + i) << " ";
+    }
+    return 0;
+}
+
+
+---
+
+55. Dynamically allocating and initializing integer array using pointers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5;
+    int* arr = new int[n];
+
+    for (int i = 0; i < n; i++) {
+        *(arr + i) = (i + 1) * 10;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    delete[] arr;
+    return 0;
+}
+
+
+---
+
+56. Swap values using pointers
+
+#include <iostream>
+using namespace std;
+
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swap(&x, &y);
+    cout << "x = " << x << ", y = " << y;
+    return 0;
+}
+
+
+---
+
+57. Dynamic object of Student using pointer
+
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+    void display() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    Student* s = new Student();
+    s->name = "Alice";
+    s->age = 20;
+    s->display();
+    delete s;
+    return 0;
+}
+
+58. Pointer to array of Book objects:
+
+class Book {
+public:
+    string title;
+    void input() { cin >> title; }
+    void display() { cout << "Title: " << title << endl; }
+};
+
+int main() {
+    Book books[2], *ptr = books;
+    for (int i = 0; i < 2; ++i) ptr[i].input();
+    for (int i = 0; i < 2; ++i) ptr[i].display();
+}
+
+
+---
+
+59. Pointer to object in member function:
+
+class Demo {
+public:
+    void show(Demo* d) { cout << "Accessed via pointer" << endl; }
+};
+
+
+---
+
+60. Box class returning current object using this:
+
+class Box {
+public:
+    Box* getThis() { return this; }
+};
+
+
+---
+
+61. Chaining member functions with this:
+
+class Person {
+    string name;
+public:
+    Person& setName(string n) { name = n; return *this; }
+    void show() { cout << "Name: " << name << endl; }
+};
+
+
+---
+
+62. Comparing objects using this:
+
+class Counter {
+    int count;
+public:
+    Counter(int c) : count(c) {}
+    bool isEqual(Counter &other) { return this->count == other.count; }
+};
+
+
+---
+
+63. Abstract class Vehicle:
+
+class Vehicle {
+public:
+    virtual void move() = 0;
+};
+
+class Car : public Vehicle {
+public:
+    void move() { cout << "Car moves" << endl; }
+};
+
+
+---
+
+64. Polymorphism with Shape:
+
+class Shape {
+public:
+    virtual void area() { cout << "Base Shape" << endl; }
+};
+
+class Circle : public Shape {
+public:
+    void area() override { cout << "Circle area" << endl; }
+};
+
+
+---
+
+65. Account with pure virtual function:
+
+class Account {
+public:
+    virtual void calculateInterest() = 0;
+};
+
+class SavingsAccount : public Account {
+public:
+    void calculateInterest() { cout << "Savings interest" << endl; }
+};
+
+
+---
+
+66. Polymorphism with Media:
+
+class Media {
+public:
+    virtual void display() { cout << "Media" << endl; }
+};
+
+class Book : public Media {
+public:
+    void display() override { cout << "Book" << endl; }
+};
+
+
+---
+
+67. Appliance hierarchy:
+
+class Appliance {
+public:
+    virtual void function() { cout << "Generic appliance" << endl; }
+};
+
+class Microwave : public Appliance {
+public:
+    void function() override { cout << "Heating food" << endl; }
+};
+
+
+---
+
+68. Shape with area calculation:
+
+class Shape {
+public:
+    virtual void area() = 0;
+};
+
+class Rectangle : public Shape {
+public:
+    void area() { cout << "Rectangle area" << endl; }
+};
+
+
+---
+
+69. Abstract Employee:
+
+class Employee {
+public:
+    virtual void calculateSalary() = 0;
+    virtual void displayDetails() = 0;
+};
+
+class Manager : public Employee {
+public:
+    void calculateSalary() { cout << "Manager salary" << endl; }
+    void displayDetails() { cout << "Manager details" << endl; }
+};
+
+
+---
+[5:10 pm, 06/05/2025] Ojasw Lowanshi: 70. Abstract class Payment:
+
+class Payment {
+public:
+    virtual void processPayment() = 0;
+};
+
+class CreditCardPayment : public Payment {
+public:
+    void processPayment() override { cout << "Processing credit card payment" << endl; }
+};
+
+
+---
+
+71. Abstract class Device:
+
+class Device {
+public:
+    virtual void turnOn() = 0;
+};
+
+class Laptop : public Device {
+public:
+    void turnOn() override { cout << "Laptop turned on" << endl; }
+};
+
+
+---
+
+72. Division by zero using exception handling:
+
+int divide(int a, int b) {
+    if (b == 0) throw runtime_error("Division by zero");
+    return a / b;
+}
+
+
+---
+
+73. Multiple catch blocks:
+
+try {
+    throw 10;  // Change to test different types
+} catch (int e) {
+    cout << "Caught int" << endl;
+} catch (const char* e) {
+    cout << "Caught string" << endl;
+}
+
+
+---
+
+74. Custom exception InvalidAgeException:
+
+class InvalidAgeException : public exception {
+public:
+    const char* what() const noexcept override {
+        return "Invalid age entered!";
+    }
+};
+
+void checkAge(int age) {
+    if (age < 0) throw InvalidAgeException();
+}
+
+
+---
+
+75. File I/O error handling:
+
+ifstream file("data.txt");
+if (!file) {
+    throw runtime_error("File could not be opened");
+}
+
+
+---
+
+76. Finally-like block (use of RAII):
+
+class Resource {
+public:
+    ~Resource() { cout << "Releasing resources (like finally)" << endl; }
+};
+
+void func() {
+    Resource r;
+    throw exception();
+}
+
+
+
+---
+
+77. Function template – Linear Search:
+
+template <typename T>
+int linearSearch(T arr[], int size, T key) {
+    for (int i = 0; i < size; ++i)
+        if (arr[i] == key) return i;
+    return -1;
+}
+
+
+---
+
+78. Class template – Stack:
+
+template <typename T>
+class Stack {
+    vector<T> s;
+public:
+    void push(T val) { s.push_back(val); }
+    void pop() { if (!s.empty()) s.pop_back(); }
+    void display() { for (T val : s) cout << val << " "; cout << endl; }
+};
+
+
+---
+
+79. Function template – Max of two:
+
+template <typename T>
+T maxVal(T a, T b) { return (a > b) ? a : b; }
+
+
+---
+
+80. Class template – LinkedList:
+
+template <typename T>
+class Node {
+public:
+    T data;
+    Node* next;
+    Node(T val) : data(val), next(nullptr) {}
+};
+
+template <typename T>
+class LinkedList {
+    Node<T>* head = nullptr;
+public:
+    void insert(T val);
+    void display();
+};
+
+
+---
+
+81. Function template – Bubble Sort:
+
+template <typename T>
+void bubbleSort(T arr[], int n) {
+    for (int i = 0; i < n-1; ++i)
+        for (int j = 0; j < n-i-1; ++j)
+            if (arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);
+}
+
+
+---
+
+82. Class template – Queue:
+
+template <typename T>
+class Queue {
+    queue<T> q;
+public:
+    void enqueue(T val) { q.push(val); }
+    void dequeue() { if (!q.empty()) q.pop(); }
+    void display() {
+        queue<T> temp = q;
+        while (!temp.empty()) { cout << temp.front() << " "; temp.pop(); }
+        cout << endl;
+    }
+};
+
+
+---
+
+83. Polymorphism – Bank accounts:
+
+class Account {
+public:
+    virtual void display() = 0;
+};
+
+class Savings : public Account {
+public:
+    void display() override { cout << "Savings Account" << endl; }
+};
+
+
+---
+
+84. Smart pointer usage:
+
+#include <memory>
+void demo() {
+    unique_ptr<int> ptr = make_unique<int>(10);
+    cout << *ptr;
+}
+
+
+---
+
+85. Safe Array with exception + template:
+
+template <typename T>
+class SafeArray {
+    T arr[100];
+public:
+    T& operator[](int i) {
+        if (i < 0 || i >= 100) throw out_of_range("Index error");
+        return arr[i];
+    }
+};
+
+
+---
+
+86. Virtual inheritance – Diamond Problem:
+
+class A { public: void show() { cout << "A"; } };
+class B : virtual public A {};
+class C : virtual public A {};
+class D : public B, public C {};
+
+
+---
+
+87. Polynomial with operator overloading:
+
+class Polynomial {
+    vector<int> coeffs;
+public:
+    Polynomial operator+(const Polynomial& p);
+    Polynomial operator*(const Polynomial& p);
+};
+
+
+---
+
+88. Function pointers – Callback:
+
+void greet() { cout << "Hello!"; }
+void callFunc(void (*func)()) { func(); }
+
+89. Class template + exception handling – Generic container:
+
+template <typename T>
+class SafeVector {
+    vector<T> data;
+public:
+    void add(T val) { data.push_back(val); }
+    T get(int index) {
+        if (index < 0 || index >= data.size()) throw out_of_range("Invalid index");
+        return data[index];
+    }
+};
+
+
+---
+
+90. Virtual destructor in class hierarchy:
+
+class Base {
+public:
+    virtual ~Base() { cout << "Base destroyed\n"; }
+};
+class Derived : public Base {
+public:
+    ~Derived() { cout << "Derived destroyed\n"; }
+};
+
+
+---
+
+91. Function template – Generic matrix operations:
+
+template <typename T>
+void addMatrix(T a[][2], T b[][2], T result[][2]) {
+    for (int i = 0; i < 2; ++i)
+        for (int j = 0; j < 2; ++j)
+            result[i][j] = a[i][j] + b[i][j];
+}
+
+
+---
+
+92. Polymorphism – Plugin system:
+
+class Plugin {
+public:
+    virtual void execute() = 0;
+};
+class AudioPlugin : public Plugin {
+public:
+    void execute() override { cout << "Audio plugin running\n"; }
+};
+
+
+---
+
+93. Class template – Generic binary tree:
+
+template <typename T>
+class Node {
+public:
+    T data;
+    Node* left, *right;
+    Node(T val) : data(val), left(nullptr), right(nullptr) {}
+};
+
+
+---
+
+94. Polymorphism – Dynamic dispatch:
+
+class Command {
+public:
+    virtual void run() = 0;
+};
+class PrintCommand : public Command {
+public:
+    void run() override { cout << "Print executed\n"; }
+};
+
+
+---
+
+95. Smart pointers + template – Type-safe container:
+
+template <typename T>
+class SafeBox {
+    shared_ptr<T> ptr;
+public:
+    SafeBox(T val) : ptr(make_shared<T>(val)) {}
+    void show() { cout << *ptr << endl; }
+};
+
+
+---
+
+96. Virtual functions – Animal ecosystem simulation:
+
+class Animal {
+public:
+    virtual void act() = 0;
+};
+class Lion : public Animal {
+public:
+    void act() override { cout << "Lion hunts\n"; }
+};
+
+97. Robust Mathematical Library with Templates and Exception Handling
+
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+// Function template for division
+template <typename T>
+T divide(T a, T b) {
+    if (b == 0)
+        throw runtime_error("Division by zero error");
+    return a / b;
+}
+
+int main() {
+    try {
+        cout << "5 / 2 = " << divide(5, 2) << endl;
+        cout << "10.0 / 2.5 = " << divide(10.0, 2.5) << endl;
+        cout << "10 / 0 = " << divide(10, 0) << endl; // This will throw an exception
+    } catch (exception &e) {
+        cout << "Exception: " << e.what() << endl;
+    }
+    return 0;
+}
+
+
+---
+
+98. Polymorphism for Flexible GUI Framework
+
+#include <iostream>
+using namespace std;
+
+// Base GUI component
+class GUIComponent {
+public:
+    virtual void render() = 0; // Pure virtual function
+    virtual ~GUIComponent() {}
+};
+
+class Button : public GUIComponent {
+public:
+    void render() override {
+        cout << "Rendering a Button." << endl;
+    }
+};
+
+class TextBox : public GUIComponent {
+public:
+    void render() override {
+        cout << "Rendering a TextBox." << endl;
+    }
+};
+
+void displayComponent(GUIComponent* comp) {
+    comp->render();
+}
+
+int main() {
+    Button b;
+    TextBox t;
+    displayComponent(&b);
+    displayComponent(&t);
+    return 0;
+}
+
+
+---
+
+99. Virtual Functions + Templates: Reusable Algorithm Library
+
+#include <iostream>
+using namespace std;
+
+class Algorithm {
+public:
+    virtual void execute() = 0;
+    virtual ~Algorithm() {}
+};
+
+template <typename T>
+class SortAlgorithm : public Algorithm {
+    T* arr;
+    int size;
+public:
+    SortAlgorithm(T* a, int s) : arr(a), size(s) {}
+    void execute() override {
+        // Simple bubble sort
+        for (int i = 0; i < size - 1; i++)
+            for (int j = 0; j < size - i - 1; j++)
+                if (arr[j] > arr[j + 1])
+                    swap(arr[j], arr[j + 1]);
+        cout << "Sorted array: ";
+        for (int i = 0; i < size; i++)
+            cout << arr[i] << " ";
+        cout << endl;
+    }
+};
+
+int main() {
+    int data[] = {5, 3, 8, 1};
+    SortAlgorithm<int> sorter(data, 4);
+    Algorithm* algo = &sorter;
+    algo->execute();
+    return 0;
+}
+
+
+---
+
+100. Type-Safe Collection Framework (Polymorphism + Templates + Exceptions)
+
+#include <iostream>
+#include <memory>
+#include <vector>
+#include <stdexcept>
+using namespace std;
+
+template <typename T>
+class Collection {
+    vector<T> items;
+public:
+    void add(T item) {
+        items.push_back(item);
+    }
+
+    T get(int index) {
+        if (index < 0 || index >= items.size())
+            throw out_of_range("Index out of bounds");
+        return items[index];
+    }
+
+    void display() {
+        for (T item : items)
+            cout << item << " ";
+        cout << endl;
+    }
+};
+
+int main() {
+    try {
+        Collection<int> intList;
+        intList.add(10);
+        intList.add(20);
+        intList.display();
+        cout << "Item at index 1: " << intList.get(1) << endl;
+        cout << "Item at index 5: " << intList.get(5) << endl; // Exception
+    } catch (exception &e) {
+        cout << "Exception: " << e.what() << endl;
+    }
+    return 0;
+}
+                                                 
+                                            ASSIGNMENT 5
+
+
+1. What are streams in C++ and why are they important? 
+Streams in C++ are abstractions that represent sources and destinations of data, such as input from the 
+keyboard or output to the screen. They are important because they provide a consistent way to 
+perform I/O operations. 
+
+2. Explain the different types of streams in C++. 
+• Input Stream (istream): For reading input. 
+• Output Stream (ostream): For writing output. 
+• File Streams (ifstream, ofstream, fstream): For file input/output. 
+• String Streams (istringstream, ostringstream, stringstream): For working with strings as 
+streams.
+ 
+3. How do input and output streams differ in C++? 
+• Input streams (istream) read data into a program. 
+• Output streams (ostream) send data out of a program. 
+
+4. Describe the role of the iostream library in C++. 
+The iostream library provides standard input/output stream classes like cin, cout, cerr, and clog. 
+
+5. What is the difference between a stream and a file stream? 
+• A stream handles general I/O. 
+• A file stream specifically handles reading from and writing to files. 
+
+6. What is the purpose of the cin object in C++? 
+cin is used to take input from the standard input device (keyboard).
+ 
+7. How does the cin object handle input operations? 
+cin uses the extraction operator (>>) to take input and stores it in variables. 
+ 
+int x; 
+cin >> x;
+ 
+8. What is the purpose of the cout object in C++? 
+
+cout is used to display output to the standard output device (console). 
+
+9. How does the cout object handle output operations? 
+cout uses the insertion operator (<<) to send data to the console.  
+cout << "Hello, World!"; 
+
+10. Explain the use of the insertion (<<) and extraction (>>) operators. 
+• <<: Inserts output into ostream (e.g., cout << x) 
+• >>: Extracts input from istream (e.g., cin >> x) 
+
+11. What are the main C++ stream classes and their purposes? 
+• istream: Input stream 
+• ostream: Output stream 
+• ifstream: File input 
+• ofstream: File output 
+• fstream: File input/output 
+• stringstream: String manipulation via stream interface 
+
+12. Explain the hierarchy of C++ stream classes. 
+markdown 
+CopyEdit 
+ios 
+istream 
+ifstream 
+ostream 
+│   
+└── ofstream 
+└── iostream 
+└── fstream 
+
+13. What is the role of the istream and ostream classes? 
+• istream: Base class for all input streams. 
+• ostream: Base class for all output streams.
+ 
+14. Describe the functionality of the ifstream and ofstream classes. 
+• ifstream: Reads data from files. 
+• ofstream: Writes data to files. 
+
+15. How do the fstream and stringstream classes differ from other stream classes? 
+• fstream: Supports both input and output on files. 
+• stringstream: Performs I/O operations on string objects instead of files or console. 
+
+16. What is unformatted I/O in C++? 
+Unformatted I/O reads or writes data as raw bytes or characters without formatting. 
+
+17. Provide examples of unformatted I/O functions. 
+cpp 
+CopyEdit 
+cin.get(ch); 
+cin.getline(str, size); 
+cout.put(ch); 
+
+18. What is formatted I/O in C++? 
+Formatted I/O provides control over how data is displayed (width, precision, etc.). 
+
+19. How do you use manipulators to perform formatted I/O in C++? 
+Using manipulators like setw, setprecision, fixed, etc. 
+CopyEdit 
+cout << setw(10) << fixed << setprecision(2) << value; 
+
+20. Explain the difference between unformatted and formatted I/O operations. 
+• Unformatted: Raw byte/character data. 
+• Formatted: Data with specific formatting (width, precision, etc.). 
+
+21. What are manipulators in C++? 
+Manipulators are functions that modify I/O stream behavior.
+ 
+22. How do manipulators modify the behavior of I/O operations? 
+They set flags or properties on streams (e.g., number formatting, alignment).
+ 
+23. Provide examples of commonly used manipulators in C++. 
+• setw(n) 
+• setprecision(n) 
+• fixed 
+• left, right 
+• endl 
+
+24. Explain the use of the setw, setprecision, and fixed manipulators. 
+• setw(n): Sets width of output field. 
+• setprecision(n): Sets decimal precision. 
+• fixed: Shows decimal point with precision. 
+
+25. How do you create custom manipulators in C++? 
+cpp 
+CopyEdit 
+ostream& custom(ostream& os) { 
+os << "***"; 
+return os; 
+} 
+cout << custom << "Hello"; 
+
+26. What is a file stream in C++ and how is it used? 
+A file stream is used for file I/O. Use ifstream, ofstream, or fstream. 
+
+27. Explain the process of opening and closing files using file streams. 
+cpp 
+CopyEdit 
+ifstream inFile("input.txt"); 
+ofstream outFile("output.txt"); 
+// Do file operations 
+inFile.close(); 
+outFile.close(); 
+
+28. Describe the different modes in which a file can be opened. 
+• ios::in – Read 
+• ios::out – Write 
+• ios::app – Append 
+• ios::trunc – Truncate 
+• ios::binary – Binary mode 
+
+29. How do you read from and write to files using file streams? 
+
+ifstream fin("data.txt"); 
+string name; 
+f
+ in >> name; 
+ofstream fout("output.txt"); 
+fout << "Name: " << name;
+
+
+30. Example of Using File Streams to Copy File Contents 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream inFile("source.txt"); 
+    ofstream outFile("destination.txt"); 
+ 
+    if (!inFile || !outFile) { 
+        cerr << "Error opening files." << endl; 
+        return 1; 
+    } 
+ 
+    string line; 
+    while (getline(inFile, line)) { 
+        outFile << line << endl; 
+    } 
+ 
+    inFile.close(); 
+    outFile.close(); 
+    return 0; 
+} 
+ 
+31. Main C++ File Stream Classes 
+• ifstream: Input file stream (for reading). 
+• ofstream: Output file stream (for writing). 
+• fstream: File stream capable of both input and output. 
+32. Roles of ifstream, ofstream, and fstream 
+• ifstream: Reads from files (input stream). 
+• ofstream: Writes to files (output stream). 
+• fstream: Reads from and writes to files (input/output stream). 
+33. Using ifstream to Read Data from a File 
+ifstream file("data.txt"); 
+string line; 
+while (getline(file, line)) { 
+cout << line << endl; 
+} 
+f
+ ile.close(); 
+34. Using ofstream to Write Data to a File 
+ofstream file("output.txt"); 
+f
+ ile << "Hello, world!" << endl; 
+f
+ ile.close(); 
+35. fstream for Input and Output 
+#include <fstream> 
+using namespace std; 
+int main() { 
+fstream file("data.txt", ios::in | ios::out); 
+if (!file) { 
+cerr << "Error opening file." << endl; 
+return 1; 
+} 
+string word; 
+f
+ ile >> word; 
+f
+ ile << "\nAppended text."; 
+f
+ ile.close(); 
+return 0; 
+} 
+
+
+36. File Management Functions in C++ 
+These functions are used to manage files: 
+• remove(filename): Deletes a file. 
+• rename(oldname, newname): Renames a file. 
+• open(), close(), is_open(): Stream-based file control. 
+37. Using remove and rename Functions 
+#include <cstdio> 
+int main() { 
+rename("oldfile.txt", "newfile.txt"); 
+remove("newfile.txt"); 
+return 0; 
+} 
+38. Purpose of seekg and seekp 
+• seekg(pos): Moves the get (read) pointer to a specific position. 
+• seekp(pos): Moves the put (write) pointer to a specific position. 
+These allow random access in files. 
+Great! Let's cover questions 39 to 51, with explanations and sample C++ code: 
+39. Examples of File Pointer Manipulation (seekg and seekp) 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    fstream file("example.txt", ios::in | ios::out); 
+     
+    file.seekp(5);             // Move write pointer to 5th byte 
+    file << "XYZ";             // Overwrite from byte 5 
+ 
+    file.seekg(0);             // Move read pointer to beginning 
+    string word; 
+    file >> word;              // Read from beginning 
+    cout << "Read: " << word << endl; 
+ 
+    file.close(); 
+    return 0; 
+} 
+ 
+
+40. What are File Modes in C++? 
+File modes define how a file is opened—whether for reading, writing, appending, etc. They are flags 
+passed to the file stream constructor or open() function. 
+ 
+41. Different File Modes in C++ 
+Common modes: 
+• ios::in – Open for reading 
+• ios::out – Open for writing 
+• ios::app – Append to the end 
+• ios::binary – Open in binary mode 
+• ios::ate – Start at end of file 
+• ios::trunc – Truncate file if it exists 
+ 
+42. Specifying File Mode When Opening a File 
+fstream file("data.txt", ios::in | ios::out | ios::app); 
+43. Difference Between Binary and Text File Modes 
+• Text mode: Interprets newlines and other characters (e.g., \n becomes CRLF on Windows). 
+• Binary mode: Reads/writes raw bytes without interpretation. 
+44. Opening Files in Different Modes 
+ofstream outText("text.txt"); // Text write (default) 
+ofstream outBin("data.bin", ios::binary); // Binary write 
+ifstream inText("text.txt", ios::in); // Text read 
+fstream inout("file.txt", ios::in | ios::out); // Read & write 
+45. What Are Binary Files in C++? 
+Binary files store data in raw binary format, preserving exact memory representation, which is more 
+efficient and compact than text files. 
+46. Reading from and Writing to Binary Files 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+int main() { 
+int data = 100; 
+ofstream out("file.bin", ios::binary); 
+out.write(reinterpret_cast<char*>(&data), sizeof(data)); 
+out.close(); 
+int input; 
+ifstream in("file.bin", ios::binary); 
+in.read(reinterpret_cast<char*>(&input), sizeof(input)); 
+    in.close(); 
+ 
+    cout << "Read: " << input << endl; 
+    return 0; 
+} 
+ 
+47. What Are Random Access Files in C++? 
+These allow direct access to any position in the file using seekg, seekp, tellg, and tellp, without 
+reading sequentially. 
+ 
+48. Performing Random Access Operations 
+fstream file("data.bin", ios::in | ios::out | ios::binary); 
+file.seekp(2 * sizeof(int)); // Move to 3rd int position 
+int value = 999; 
+file.write(reinterpret_cast<char*>(&value), sizeof(value)); 
+file.close(); 
+ 
+49. Example: Random Access in Binary Files 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    fstream file("numbers.bin", ios::in | ios::out | ios::binary); 
+    int nums[5] = {10, 20, 30, 40, 50}; 
+     
+    // Write 
+    file.write(reinterpret_cast<char*>(nums), sizeof(nums)); 
+ 
+    // Update 3rd number (index 2) 
+    int newValue = 99; 
+    file.seekp(2 * sizeof(int)); 
+    file.write(reinterpret_cast<char*>(&newValue), sizeof(newValue)); 
+ 
+    file.close(); 
+    return 0; 
+} 
+ 
+50. Basic I/O Using cin and cout 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    int x; 
+    cout << "Enter a number: "; 
+    cin >> x; 
+    cout << "You entered: " << x << endl; 
+    return 0; 
+} 
+ 
+51. Read and Display Multiple Lines of Text 
+#include <iostream> 
+#include <string> 
+using namespace std; 
+ 
+int main() { 
+    string line; 
+    cout << "Enter multiple lines (type 'exit' to stop):" << endl; 
+    while (true) { 
+        getline(cin, line); 
+        if (line == "exit") break; 
+        cout << "You entered: " << line << endl; 
+    } 
+    return 0; 
+} 
+ 
+
+ 
+52. Sum of Integers Using Streams 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    int num, sum = 0; 
+    cout << "Enter integers (non-integer to stop): "; 
+    while (cin >> num) { 
+        sum += num; 
+    } 
+    cout << "Sum = " << sum << endl; 
+    return 0; 
+} 
+ 
+53. Input and Output Various Data Types 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    int i; 
+    float f; 
+    char c; 
+    string s; 
+ 
+    cout << "Enter an int, float, char, and string: "; 
+    cin >> i >> f >> c >> s; 
+ 
+    cout << "Int: " << i << ", Float: " << f << ", Char: " << c << ", String: " << s << endl; 
+    return 0; 
+} 
+ 
+54. Output Formatting with Manipulators 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+ 
+int main() { 
+    double pi = 3.1415926535; 
+    cout << fixed << setprecision(2) << setw(10) << pi << endl; 
+    return 0; 
+} 
+ 
+55. Formatted Output for Name, Age, Salary 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+ 
+int main() { 
+    string name; 
+    int age; 
+    double salary; 
+ 
+    cout << "Enter name, age, and salary: "; 
+    cin >> name >> age >> salary; 
+ 
+    cout << left << setw(10) << "Name" << setw(5) << "Age" << setw(10) << "Salary" << endl; 
+cout << left << setw(10) << name << setw(5) << age << setw(10) << fixed << setprecision(2) << 
+salary << endl; 
+return 0; 
+} 
+
+ 
+55. Read and Display Name, Age, Salary 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+int main() { 
+string name; 
+int age; 
+double salary; 
+cout << "Enter name, age, salary: "; 
+cin >> name >> age >> salary; 
+cout << left << setw(10) << "Name" << setw(5) << "Age" << setw(10) << "Salary" << endl; 
+cout << left << setw(10) << name << setw(5) << age << setw(10) << fixed << setprecision(2) << 
+salary << endl; 
+return 0; 
+} 
+
+56. File Input/Output with ifstream and ofstream 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream outFile("sample.txt"); 
+    outFile << "Hello File!" << endl; 
+    outFile.close(); 
+ 
+    ifstream inFile("sample.txt"); 
+    string line; 
+    getline(inFile, line); 
+    cout << "File says: " << line << endl; 
+    inFile.close(); 
+ 
+    return 0; 
+} 
+ 
+57. Read Integers from File 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream inFile("numbers.txt"); 
+    int num; 
+    while (inFile >> num) { 
+        cout << num << " "; 
+    } 
+    inFile.close(); 
+    return 0; 
+} 
+ 
+58. Write Strings to File 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream outFile("words.txt"); 
+    outFile << "Apple\nBanana\nCherry\n"; 
+    outFile.close(); 
+    return 0; 
+} 
+ 
+59. Unformatted I/O with get and put 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    char ch; 
+    cout << "Enter a character: "; 
+    ch = cin.get(); 
+    cout.put(ch); 
+    return 0; 
+} 
+ 
+60. Read/Write Characters with get and put 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream inFile("charfile.txt"); 
+    char ch; 
+    while (inFile.get(ch)) { 
+        cout.put(ch); 
+    } 
+    inFile.close(); 
+    return 0; 
+} 
+ 
+61. Table with Formatted I/O 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+ 
+int main() { 
+    cout << left << setw(10) << "Name" << setw(5) << "Age" << endl; 
+    cout << left << setw(10) << "Alice" << setw(5) << 30 << endl; 
+    cout << left << setw(10) << "Bob" << setw(5) << 25 << endl; 
+    return 0; 
+} 
+ 
+62. Use getline to Read Full Line 
+#include <iostream> 
+#include <string> 
+using namespace std; 
+ 
+int main() { 
+    string line; 
+    cout << "Enter a line: "; 
+    getline(cin, line); 
+    cout << "You entered: " << line << endl; 
+    return 0; 
+} 
+
+63. Format Floating-Point Precision 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+int main() { 
+double val = 123.456789; 
+cout << fixed << setprecision(2) << val << endl; 
+cout << fixed << setprecision(4) << val << endl; 
+return 0; 
+} 
+
+
+64. Use setw to Align Columns 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+int main() { 
+cout << setw(10) << "ID" << setw(10) << "Score" << endl; 
+cout << setw(10) << 1 << setw(10) << 95.6 << endl; 
+cout << setw(10) << 2 << setw(10) << 88.4 << endl; 
+return 0; 
+} 
+65. Format Currency and Percentages 
+#include <iostream> 
+#include <iomanip> 
+using namespace std; 
+int main() { 
+    double salary = 12345.6789, bonus = 0.12; 
+    cout << "Salary: $" << fixed << setprecision(2) << salary << endl; 
+    cout << "Bonus: " << fixed << setprecision(2) << bonus * 100 << "%" << endl; 
+    return 0; 
+} 
+ 
+66. Read from Text File 
+#include <iostream> 
+#include <fstream> 
+#include <string> 
+using namespace std; 
+ 
+int main() { 
+    ifstream inFile("data.txt"); 
+    string line; 
+    while (getline(inFile, line)) { 
+        cout << line << endl; 
+    } 
+    inFile.close(); 
+    return 0; 
+} 
+ 
+67. Write User Input to File 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream outFile("userinput.txt"); 
+    string input; 
+    cout << "Enter text: "; 
+    getline(cin, input); 
+    outFile << input << endl; 
+    outFile.close(); 
+    return 0; 
+} 
+ 
+68. Copy File Contents 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream src("source.txt"); 
+    ofstream dest("destination.txt"); 
+    char ch; 
+    while (src.get(ch)) { 
+        dest.put(ch); 
+    } 
+    src.close(); 
+    dest.close(); 
+    return 0; 
+} 
+ 
+69. Append to File 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream outFile("log.txt", ios::app); 
+    outFile << "New entry added.\n"; 
+    outFile.close(); 
+    return 0; 
+} 
+ 
+70. Read Binary Data 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream inFile("binary.dat", ios::binary); 
+    int num; 
+    inFile.read(reinterpret_cast<char*>(&num), sizeof(num)); 
+    cout << "Read number: " << num << endl; 
+    inFile.close(); 
+    return 0; 
+} 
+ 
+71. Write Binary Data 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    int num = 12345; 
+    ofstream outFile("binary.dat", ios::binary); 
+    outFile.write(reinterpret_cast<char*>(&num), sizeof(num)); 
+    outFile.close(); 
+    return 0; 
+} 
+ 
+72. Use fstream for Input/Output 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    fstream file("example.txt", ios::in | ios::out | ios::trunc); 
+    file << "Hello World\n"; 
+    file.seekg(0); 
+    string line; 
+    getline(file, line); 
+    cout << "Read: " << line << endl; 
+    file.close(); 
+    return 0; 
+} 
+ 
+73. Read/Write Struct to Binary File 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+struct Person { 
+    char name[20]; 
+    int age; 
+}; 
+ 
+int main() { 
+    Person p = {"Alice", 30}; 
+    ofstream outFile("person.dat", ios::binary); 
+    outFile.write(reinterpret_cast<char*>(&p), sizeof(p)); 
+    outFile.close(); 
+ 
+    Person q; 
+    ifstream inFile("person.dat", ios::binary); 
+    inFile.read(reinterpret_cast<char*>(&q), sizeof(q)); 
+    cout << "Name: " << q.name << ", Age: " << q.age << endl; 
+    inFile.close(); 
+ 
+    return 0; 
+} 
+ 
+74. Rename and Delete Files 
+#include <cstdio> 
+ 
+int main() { 
+    rename("old.txt", "new.txt"); 
+    remove("new.txt"); 
+    return 0; 
+} 
+ 
+75. Create, Open, Close Files 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream file("sample.txt"); 
+    file << "Created file" << endl; 
+    file.close(); 
+    return 0; 
+} 
+ 
+76. seekg and tellg Example 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream inFile("data.txt"); 
+    inFile.seekg(5); 
+    cout << "Current position: " << inFile.tellg() << endl; 
+    char ch; 
+    inFile.get(ch); 
+    cout << "Character: " << ch << endl; 
+    inFile.close(); 
+    return 0; 
+} 
+ 
+77. seekp and tellp Example 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream outFile("example.txt"); 
+    outFile.seekp(5); 
+    outFile << "Hello"; 
+    cout << "Write position: " << outFile.tellp 
+() << endl; 
+outFile.close(); 
+return 0; 
+} 
+ --- 
+ 
+### **78. File Modes (read, write, append)** 
+```cpp 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream file("mode.txt", ios::app); 
+    file << "Appending this line.\n"; 
+    file.close(); 
+    return 0; 
+} 
+ 
+79. Read/Write Binary Mode 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    int a = 50; 
+    ofstream out("bin.dat", ios::binary); 
+    out.write(reinterpret_cast<char*>(&a), sizeof(a)); 
+    out.close(); 
+ 
+    int b; 
+    ifstream in("bin.dat", ios::binary); 
+    in.read(reinterpret_cast<char*>(&b), sizeof(b)); 
+    in.close(); 
+ 
+    return 0; 
+} 
+ 
+80. Text vs Binary File Mode 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    // Text 
+    ofstream textFile("text.txt"); 
+    textFile << 123 << endl; 
+    textFile.close(); 
+ 
+    // Binary 
+    int n = 123; 
+    ofstream binFile("binfile.dat", ios::binary); 
+    binFile.write(reinterpret_cast<char*>(&n), sizeof(n)); 
+    binFile.close(); 
+ 
+    return 0; 
+} 
+ 
+
+ 
+81. Open a File in Truncation Mode 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream file("truncate.txt", ios::trunc); 
+    file << "This overwrites any existing content.\n"; 
+    file.close(); 
+    return 0; 
+} 
+ 
+82. Read and Write Binary Data with read and write 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    int x = 100; 
+    ofstream out("data.bin", ios::binary); 
+    out.write(reinterpret_cast<char*>(&x), sizeof(x)); 
+    out.close(); 
+ 
+    int y; 
+    ifstream in("data.bin", ios::binary); 
+    in.read(reinterpret_cast<char*>(&y), sizeof(y)); 
+    in.close(); 
+ 
+    return 0; 
+} 
+ 
+83. Random Access in Binary File 
+#include <fstream> 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    fstream file("numbers.bin", ios::in | ios::out | ios::binary | ios::trunc); 
+    int nums[5] = {10, 20, 30, 40, 50}; 
+    file.write(reinterpret_cast<char*>(nums), sizeof(nums)); 
+ 
+    int value = 999; 
+    file.seekp(2 * sizeof(int)); // 3rd element 
+    file.write(reinterpret_cast<char*>(&value), sizeof(value)); 
+ 
+    file.seekg(0); 
+    for (int i = 0; i < 5; i++) { 
+        file.read(reinterpret_cast<char*>(&value), sizeof(value)); 
+        cout << value << " "; 
+    } 
+    file.close(); 
+    return 0; 
+} 
+ 
+84. Read/Write Structure with Random Access 
+#include <fstream> 
+#include <iostream> 
+using namespace std; 
+ 
+struct Record { 
+    int id; 
+    char name[20]; 
+}; 
+ 
+int main() { 
+    fstream file("records.dat", ios::in | ios::out | ios::binary | ios::trunc); 
+    Record r1 = {1, "Alice"}, r2 = {2, "Bob"}, r3 = {3, "Charlie"}; 
+ 
+    file.write(reinterpret_cast<char*>(&r1), sizeof(r1)); 
+    file.write(reinterpret_cast<char*>(&r2), sizeof(r2)); 
+    file.write(reinterpret_cast<char*>(&r3), sizeof(r3)); 
+ 
+    file.seekg(1 * sizeof(Record)); // read Bob 
+    Record temp; 
+    file.read(reinterpret_cast<char*>(&temp), sizeof(temp)); 
+    cout << "Read ID: " << temp.id << ", Name: " << temp.name << endl; 
+    file.close(); 
+    return 0; 
+} 
+ 
+85. Update Specific Records in Binary File 
+#include <fstream> 
+using namespace std; 
+ 
+struct Data { 
+    int id; 
+    char name[20]; 
+}; 
+ 
+int main() { 
+    fstream file("data.dat", ios::in | ios::out | ios::binary); 
+    Data updated = {2, "Updated"}; 
+ 
+    file.seekp(1 * sizeof(Data)); // update second record 
+    file.write(reinterpret_cast<char*>(&updated), sizeof(updated)); 
+    file.close(); 
+    return 0; 
+} 
+ 
+86. Display Binary File in Reverse Order 
+#include <fstream> 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream file("numbers.bin", ios::binary); 
+    file.seekg(0, ios::end); 
+    int size = file.tellg() / sizeof(int); 
+ 
+    for (int i = size - 1; i >= 0; i--) { 
+        file.seekg(i * sizeof(int)); 
+        int n; 
+        file.read(reinterpret_cast<char*>(&n), sizeof(n)); 
+        cout << n << " "; 
+    } 
+    file.close(); 
+    return 0; 
+} 
+ 
+87. Read, Process, and Write Result to File 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    int x; 
+    cout << "Enter a number: "; 
+    cin >> x; 
+    x *= 2; 
+ 
+    ofstream file("output.txt"); 
+    file << "Double: " << x << endl; 
+    file.close(); 
+    return 0; 
+} 
+ 
+88. Read Config File to Control Behavior 
+#include <iostream> 
+#include <fstream> 
+#include <string> 
+using namespace std; 
+ 
+int main() { 
+    ifstream file("config.txt"); 
+    string key; 
+    int value; 
+    while (file >> key >> value) { 
+        if (key == "threshold") { 
+            cout << "Threshold set to: " << value << endl; 
+        } 
+    } 
+    return 0; 
+} 
+ 
+89. Log Errors to File 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream log("error.log", ios::app); 
+    log << "Error: Invalid input!" << endl; 
+    log.close(); 
+    return 0; 
+} 
+ 
+90. Simple Text Editor 
+#include <fstream> 
+#include <iostream> 
+#include <string> 
+using namespace std; 
+ 
+int main() { 
+    string line; 
+    ofstream file("text.txt", ios::app); 
+    cout << "Enter text (type END to stop):\n"; 
+    while (getline(cin, line)) { 
+        if (line == "END") break; 
+        file << line << endl; 
+    } 
+    file.close(); 
+    return 0; 
+} 
+ 
+91. Read and Process CSV File 
+#include <iostream> 
+#include <fstream> 
+#include <sstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream file("data.csv"); 
+    string line; 
+    while (getline(file, line)) { 
+        stringstream ss(line); 
+        string field; 
+        while (getline(ss, field, ',')) { 
+            cout << field << "\t"; 
+        } 
+        cout << endl; 
+    } 
+    return 0; 
+} 
+ 
+92. Search for Word and Count Occurrences 
+#include <iostream> 
+#include <fstream> 
+#include <string> 
+using namespace std; 
+ 
+int main() { 
+    ifstream file("text.txt"); 
+    string word, search = "example"; 
+    int count = 0; 
+ 
+    while (file >> word) { 
+        if (word == search) count++; 
+    } 
+ 
+    cout << "Occurrences of '" << search << "': " << count << endl; 
+    return 0; 
+} 
+ 
+93. Exception Handling with Files 
+#include <iostream> 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    try { 
+        ifstream file("nofile.txt"); 
+        if (!file) throw runtime_error("File not found"); 
+    } catch (exception &e) { 
+        cerr << "Error: " << e.what() << endl; 
+    } 
+    return 0; 
+} 
+ 
+94. Simple Compression/Decompression 
+#include <fstream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream in("original.txt"); 
+    ofstream out("compressed.txt"); 
+    char ch; 
+    while (in.get(ch)) { 
+        out.put(ch + 1); // simple Caesar cipher 
+    } 
+    in.close(); 
+    out.close(); 
+    return 0; 
+} 
+ 
+95. Merge Multiple Files 
+#include <fstream> 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    ofstream out("merged.txt"); 
+    ifstream f1("a.txt"), f2("b.txt"); 
+    string line; 
+ 
+    while (getline(f1, line)) out << line << endl; 
+    while (getline(f2, line)) out << line << endl; 
+ 
+    f1.close(); f2.close(); out.close(); 
+    return 0; 
+} 
+ 
+96. Process Large Files (Concept: Chunk Read) 
+#include <fstream> 
+#include <iostream> 
+using namespace std; 
+ 
+int main() { 
+    ifstream file("large.txt"); 
+    const int bufferSize = 1024; 
+    char buffer[bufferSize]; 
+ 
+    while (!file.eof()) { 
+        file.read(buffer, bufferSize); 
+        cout.write(buffer, file.gcount()); 
+    } 
+    file.close(); 
+    return 0; 
+} 
+
+
+ 
+97. Basic File Encryption/Decryption 
+#include <fstream> 
+using namespace std; 
+int main() { 
+ifstream in("plain.txt"); 
+ofstream out("encrypted.txt"); 
+char ch; 
+while (in.get(ch)) { 
+out.put(ch ^ 0xAA);  // XOR encryption 
+} 
+in.close(); 
+out.close(); 
+return 0; 
+}
+
+
+
+
